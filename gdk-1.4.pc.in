@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: GDK
+Description: GIMP Drawing Kit
+Version: @VERSION@
+Requires: glib-1.4
+Libs: -L${libdir} -lgdk-1.4
+Libs.private: @x_ldflags@ @INTLLIBS@ @x_libs@ @SCALABLE_FONTS_LIBS@ @PNG_LIBS@ @WAYLAND_LIBS@ -lm
+Cflags: -I${includedir}/gtk-1.4 @x_cflags@

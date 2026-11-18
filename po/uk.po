@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Yuri Syrota <yuri@renome.rovno.ua>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cgtk 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 23:56+0000\n"
+"PO-Revision-Date: 2026-11-17 23:00+0000\n"
+"Last-Translator: Yuri Syrota <yuri@renome.rovno.ua>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gtk/gtkcolorsel.c:220
+msgid "Hue:"
+msgstr "Відтінок:"
+
+#: gtk/gtkcolorsel.c:221
+msgid "Saturation:"
+msgstr "Насиченість:"
+
+#: gtk/gtkcolorsel.c:222
+msgid "Value:"
+msgstr "Значення:"
+
+#: gtk/gtkcolorsel.c:223
+msgid "Red:"
+msgstr "Червоний:"
+
+#: gtk/gtkcolorsel.c:224
+msgid "Green:"
+msgstr "Зелений:"
+
+#: gtk/gtkcolorsel.c:225
+msgid "Blue:"
+msgstr "Синій:"
+
+#: gtk/gtkcolorsel.c:226
+msgid "Opacity:"
+msgstr "Щільність:"
+
+#: gtk/gtkcolorsel.c:1721 gtk/gtkfilesel.c:1362 gtk/gtkfontsel.c:1002
+#: gtk/gtkgamma.c:415 gtk/gtkmessagedialog.c:120 gtk/gtkmessagedialog.c:133
+msgid "OK"
+msgstr "Гаразд"
+
+#: gtk/gtkcolorsel.c:1727 gtk/gtkfilesel.c:1385 gtk/gtkfilesel.c:1886
+#: gtk/gtkfilesel.c:1987 gtk/gtkfilesel.c:2107 gtk/gtkfontsel.c:1015
+#: gtk/gtkgamma.c:423 gtk/gtkmessagedialog.c:126 gtk/gtkmessagedialog.c:134
+msgid "Cancel"
+msgstr "Відміна"
+
+#: gtk/gtkcolorsel.c:1732
+msgid "Help"
+msgstr "Довідка"
+
+#: gtk/gtkeditable.c:1537
+msgid "Undo"
+msgstr "Скасувати"
+
+#: gtk/gtkeditable.c:1538
+msgid "Redo"
+msgstr "Повторити"
+
+#: gtk/gtkeditable.c:1540
+msgid "Cut"
+msgstr "Вирізати"
+
+#: gtk/gtkeditable.c:1541
+msgid "Copy"
+msgstr "Копіювати"
+
+#: gtk/gtkeditable.c:1542
+msgid "Paste"
+msgstr "Вставити"
+
+#: gtk/gtkeditable.c:1543 gtk/gtkfilesel.c:1978
+msgid "Delete"
+msgstr "Видалити"
+
+#: gtk/gtkeditable.c:1545
+msgid "Select All"
+msgstr "Виділити все"
+
+#: gtk/gtkfilesel.c:799
+msgid "All Files"
+msgstr "Усі файли"
+
+#: gtk/gtkfilesel.c:963
+msgid "Name"
+msgstr "Назва"
+
+#: gtk/gtkfilesel.c:963
+msgid "Size"
+msgstr "Розмір"
+
+#: gtk/gtkfilesel.c:963
+msgid "Date Modified"
+msgstr "Дата зміни"
+
+#: gtk/gtkfilesel.c:1056
+msgid "Home"
+msgstr "Домашній каталог"
+
+#: gtk/gtkfilesel.c:1057
+msgid "File System"
+msgstr "Файлова система"
+
+#: gtk/gtkfilesel.c:1229
+msgid "Remove from Places"
+msgstr "Вилучити з місць"
+
+#: gtk/gtkfilesel.c:1237
+msgid "Look in:"
+msgstr "Шукати в:"
+
+#: gtk/gtkfilesel.c:1254
+msgid "Add to Places"
+msgstr "Додати до місць"
+
+#: gtk/gtkfilesel.c:1255
+msgid "Show Hidden Files"
+msgstr "Показувати приховані файли"
+
+#: gtk/gtkfilesel.c:1351
+msgid "File name:"
+msgstr "Назва файлу:"
+
+#: gtk/gtkfilesel.c:1375
+msgid "Files of type:"
+msgstr "Тип файлів:"
+
+#: gtk/gtkfilesel.c:1396 gtk/gtkfilesel.c:2532
+#, c-format
+msgid "Directory unreadable: %s"
+msgstr "Неможливо зчитати каталог: %s"
+
+#: gtk/gtkfilesel.c:1437 gtk/gtkfilesel.c:1445
+msgid "Create Dir"
+msgstr "Створити каталог"
+
+#: gtk/gtkfilesel.c:1455 gtk/gtkfilesel.c:2060
+msgid "Rename File"
+msgstr "Переіменувати файл"
+
+#: gtk/gtkfilesel.c:1465 gtk/gtkfilesel.c:1955
+msgid "Delete File"
+msgstr "Видалити файл"
+
+#: gtk/gtkfilesel.c:1746
+msgid "Error"
+msgstr "Помилка"
+
+#: gtk/gtkfilesel.c:1770 gtk/gtkinputdialog.c:149 gtk/gtkmessagedialog.c:123
+msgid "Close"
+msgstr "Закрити"
+
+#: gtk/gtkfilesel.c:1845
+msgid "Create Directory"
+msgstr "Створити каталог"
+
+#: gtk/gtkfilesel.c:1860
+msgid "Directory name:"
+msgstr "Назва каталога:"
+
+#: gtk/gtkfilesel.c:1877
+msgid "Create"
+msgstr "Створити"
+
+#: gtk/gtkfilesel.c:2098
+msgid "Rename"
+msgstr "Переіменувати"
+
+#: gtk/gtkfilesel.c:2508
+msgid "Selection: "
+msgstr "Вибір: "
+
+#: gtk/gtkfontsel.c:332
+msgid "Size (px):"
+msgstr "Розмір (пікс.):"
+
+#: gtk/gtkfontsel.c:332 gtk/gtkfontsel.c:659
+msgid "Size (pt):"
+msgstr "Розмір (пт):"
+
+#: gtk/gtkfontsel.c:539
+#, c-format
+msgid "%s (bitmap)"
+msgstr "%s (растровий)"
+
+#: gtk/gtkfontsel.c:650
+msgid "Font"
+msgstr "Шрифт"
+
+#: gtk/gtkfontsel.c:657
+msgid "Family:"
+msgstr "Родина:"
+
+#: gtk/gtkfontsel.c:658
+msgid "Style:"
+msgstr "Стиль:"
+
+#: gtk/gtkfontsel.c:671
+msgid "Preview:"
+msgstr "Перегляд:"
+
+#: gtk/gtkfontsel.c:1009
+msgid "Apply"
+msgstr "Застосувати"
+
+#: gtk/gtkfontsel.c:1031
+msgid "Font Selection"
+msgstr "Вибір шрифту"
+
+#: gtk/gtkgamma.c:395
+msgid "Gamma"
+msgstr "Гама"
+
+#: gtk/gtkgamma.c:402
+msgid "Gamma value"
+msgstr "Значення гами"
+
+#: gtk/gtkinputdialog.c:126
+msgid "Input"
+msgstr "Ввід"
+
+#: gtk/gtkinputdialog.c:134
+msgid "No input devices"
+msgstr "Немає пристроїв вводу"
+
+#: gtk/gtkinputdialog.c:141
+msgid "Save"
+msgstr "Зберегти"
+
+#: gtk/gtkmessagedialog.c:129
+msgid "Yes"
+msgstr "Так"
+
+#: gtk/gtkmessagedialog.c:130
+msgid "No"
+msgstr "Ні"
+
+#: gtk/gtknotebook.c:2053 gtk/gtknotebook.c:4182
+#, c-format
+msgid "Page %u"
+msgstr "Сторінка %u"
+
+#: gtk/gtkrc.c:1708
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\" line %d"
+msgstr "Файл із зображенням не знайдено в pixmap_path: \"%s\", рядок %d"
+
+#: gtk/gtkrc.c:1711
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\""
+msgstr "Файл із зображенням не знайдено в pixmap_path: \"%s\""
+
+#: gtk/gtkthemes.c:125
+#, c-format
+msgid "Unable to locate loadable module in module_path: \"%s\","
+msgstr "Модуль не знайдено в module_path: \"%s\","
+
+#: gtk/gtktipsquery.c:179
+msgid "--- No Tip ---"
+msgstr "--- Немає підказки ---"

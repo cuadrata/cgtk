@@ -1,0 +1,145 @@
+# Clarus: GNOME 2's Clearlooks, drawn by the engine built into the
+# library, ported from Clearlooks. The colours and styles are those of
+# the Clearlooks theme of gtk-engines 2.20.2, its GUMMY style, worked
+# out with GTK+ 2's shade () and mix () where it used them.
+#
+# GTK+ 1's rc files set a frame's thickness through the engine, and
+# match a class with "class" where GTK+ 2's matched "<GtkButton>".
+
+style "clarus"
+{
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#a9a5a2"
+
+  bg[NORMAL]        = "#edeceb"
+  bg[ACTIVE]        = "#d6d4d2"
+  bg[PRELIGHT]      = "#f1f1f0"
+  bg[SELECTED]      = "#86abd9"
+  bg[INSENSITIVE]   = "#edeceb"
+
+  base[NORMAL]      = "#ffffff"
+  base[ACTIVE]      = "#ffffff"
+  base[PRELIGHT]    = "#e2e0df"
+  base[SELECTED]    = "#86abd9"
+  base[INSENSITIVE] = "#edeceb"
+
+  text[NORMAL]      = "#1a1a1a"
+  text[ACTIVE]      = "#1a1a1a"
+  text[PRELIGHT]    = "#1a1a1a"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#a9a5a2"
+
+  engine "clarus"
+  {
+    style              = GUMMY
+    radius             = 3.0
+    reliefstyle        = 1
+    menubarstyle       = 0
+    toolbarstyle       = 0
+    colorize_scrollbar = TRUE
+    xthickness         = 1
+    ythickness         = 1
+  }
+}
+
+style "clarus-wide"
+{
+  engine "clarus" { xthickness = 2  ythickness = 2 }
+}
+
+style "clarus-entry"
+{
+  bg[SELECTED]      = "#cfddf0"
+  fg[SELECTED]      = "#1a1a1a"
+
+  engine "clarus"
+  {
+    focus_color     = "#4b6e99"
+    xthickness      = 3
+    ythickness      = 3
+  }
+}
+
+style "clarus-button"
+{
+  bg[NORMAL]        = "#f6f5f5"
+  bg[PRELIGHT]      = "#fafafa"
+  bg[ACTIVE]        = "#cbc9c6"
+
+  engine "clarus" { xthickness = 3  ythickness = 3 }
+}
+
+style "clarus-notebook"
+{
+  bg[NORMAL]        = "#f1f1f0"
+
+  engine "clarus" { xthickness = 3  ythickness = 3 }
+}
+
+style "clarus-notebook-page"
+{
+  bg[NORMAL]        = "#f1f1f0"
+}
+
+style "clarus-menu"
+{
+  bg[NORMAL]        = "#ffffff"
+
+  engine "clarus" { xthickness = 1  ythickness = 1  radius = 0.0 }
+}
+
+style "clarus-menuitem"
+{
+  fg[PRELIGHT]      = "#ffffff"
+
+  engine "clarus" { xthickness = 2  ythickness = 3 }
+}
+
+style "clarus-progressbar"
+{
+  fg[PRELIGHT]      = "#ffffff"
+}
+
+style "clarus-header"
+{
+  engine "clarus" { xthickness = 2  ythickness = 1 }
+}
+
+style "clarus-tooltips"
+{
+  bg[NORMAL]        = "#f5f5b5"
+  fg[NORMAL]        = "#000000"
+
+  engine "clarus" { xthickness = 4  ythickness = 4 }
+}
+
+# GTK+ 1's lists draw their text in fg
+style "clarus-list"
+{
+  fg[NORMAL]        = "#1a1a1a"
+  fg[ACTIVE]        = "#ffffff"
+  fg[PRELIGHT]      = "#1a1a1a"
+}
+
+class "GtkWidget" style "clarus"
+class "GtkSeparator" style "clarus-wide"
+class "GtkFrame" style "clarus-wide"
+class "GtkCalendar" style "clarus-wide"
+class "GtkRange" style "clarus-wide"
+class "GtkEntry" style "clarus-entry"
+class "GtkText" style "clarus-entry"
+class "GtkButton" style "clarus-button"
+class "GtkNotebook" style "clarus-notebook"
+class "GtkProgress" style "clarus-progressbar"
+class "GtkCList" style "clarus-list"
+widget_class "*GtkNotebook.GtkEventBox*" style "clarus-notebook-page"
+widget_class "*GtkNotebook.GtkViewport*" style "clarus-notebook-page"
+widget_class "*GtkNotebook.GtkScrolledWindow*" style "clarus-notebook-page"
+class "GtkMenu" style "clarus-menu"
+widget_class "*GtkMenu.*" style "clarus-menu"
+widget_class "*GtkMenuItem*" style "clarus-menuitem"
+widget_class "*.GtkCList.GtkButton" style "clarus-header"
+widget "gtk-tooltips" style "clarus-tooltips"

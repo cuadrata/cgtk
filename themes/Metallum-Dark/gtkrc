@@ -1,0 +1,58 @@
+# Metallum-Dark: Metallum on a dark background. The engine is the
+# same; its greys are made lighter than the background rather than
+# darker, and labels and arrows are in the light foreground. Thumbs
+# and sliders are Metallum's own.
+
+style "metallum-dark"
+{
+  fg[NORMAL]        = "#dbe5e0"
+  fg[ACTIVE]        = "#dbe5e0"
+  fg[PRELIGHT]      = "#f2f7f4"
+  fg[SELECTED]      = "#000000"
+  fg[INSENSITIVE]   = "#7c8682"
+
+  bg[NORMAL]        = "#3b3f3d"
+  bg[ACTIVE]        = "#303432"
+  bg[PRELIGHT]      = "#8a5a3a"
+  bg[SELECTED]      = "#5f9784"
+  bg[INSENSITIVE]   = "#3b3f3d"
+
+  base[NORMAL]      = "#212423"
+  base[ACTIVE]      = "#303432"
+  base[PRELIGHT]    = "#212423"
+  base[SELECTED]    = "#5f9784"
+  base[INSENSITIVE] = "#303432"
+
+  text[NORMAL]      = "#e6ece9"
+  text[ACTIVE]      = "#e6ece9"
+  text[PRELIGHT]    = "#e6ece9"
+  text[SELECTED]    = "#000000"
+  text[INSENSITIVE] = "#6f7874"
+
+  engine "metallum"
+  {
+  }
+}
+
+style "metallum-dark-light"
+{
+  fg[NORMAL]        = "#ebf0ed"
+  fg[ACTIVE]        = "#ebf0ed"
+  fg[PRELIGHT]      = "#ffffff"
+  fg[SELECTED]      = "#000000"
+}
+
+# Thumbs and sliders as on Metallum: copper and dark green dots, and a
+# copper stepper under the pointer
+style "metallum-dark-range"
+{
+  bg[PRELIGHT]      = "#e6c4a3"
+  fg[PRELIGHT]      = "#3e5a50"
+}
+
+class "GtkWidget" style "metallum-dark"
+class "GtkRange" style "metallum-dark-range"
+widget_class "*.GtkMenuItem.*" style "metallum-dark-light"
+widget_class "*.GtkCheckButton.*" style "metallum-dark-light"
+widget_class "*.GtkRadioButton.*" style "metallum-dark-light"
+widget_class "*.GtkButton.*" style "metallum-dark-light"

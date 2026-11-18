@@ -1,0 +1,69 @@
+# Gelidus: thin edges and icy colours, drawn by the engine built into the
+# library. It was ported from the ThinIce engine and theme of
+# gtk-engines 2.20.2, and has ThinIce's colours but for its highlight:
+# selections, a progress bar and the default button's corner are in the
+# colour of a solid arrow on a highlighted item, not ThinIce's blue.
+#
+# base[ACTIVE] is what GTK+ 1's lists fill the space between their rows
+# with, so it matches base[NORMAL]; ThinIce's grey there was for GTK+
+# 2's unfocused selections.
+
+style "gelidus"
+{
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#747474"
+
+  bg[NORMAL]        = "#d3d3dd"
+  bg[ACTIVE]        = "#c1c1cc"
+  bg[PRELIGHT]      = "#e5e5f7"
+  bg[SELECTED]      = "#8686c8"
+  bg[INSENSITIVE]   = "#d3d3dd"
+
+  base[NORMAL]      = "#e5e5f7"
+  base[ACTIVE]      = "#e5e5f7"
+  base[PRELIGHT]    = "#e5e5f7"
+  base[SELECTED]    = "#8686c8"
+  base[INSENSITIVE] = "#e5e5f7"
+
+  text[NORMAL]      = "#000000"
+  text[ACTIVE]      = "#ffffff"
+  text[PRELIGHT]    = "#000000"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#747474"
+
+  engine "gelidus"
+  {
+    # Square sliders, or with two corners cut off?
+    rect_scrollbar = FALSE
+
+    # On sliders and handles: NOTHING, SLASH, INVSLASH, DOT, INVDOT
+    mark_type1 = SLASH
+
+    # On scrollbar steppers: NOTHING, SLASH, INVSLASH, DOT, INVDOT, ARROW
+    # (ThinIce's GTK+ 2 theme has arrows; its GTK+ 1 look was a slash)
+    mark_type2 = SLASH
+
+    # Along a paned widget's handle: NONE, SOME, FULL
+    paned_dots = SOME
+  }
+}
+
+style "gelidus-tooltips"
+{
+  bg[NORMAL]        = "#eee1b3"
+  fg[NORMAL]        = "#000000"
+}
+
+style "gelidus-progress-bar"
+{
+  bg[PRELIGHT]      = "#8686c8"
+  fg[PRELIGHT]      = "#ffffff"
+  bg[NORMAL]        = "#c1c1cc"
+}
+
+class "GtkWidget" style "gelidus"
+widget "gtk-tooltips*" style "gelidus-tooltips"
+class "GtkProgressBar" style "gelidus-progress-bar"

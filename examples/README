@@ -1,0 +1,69 @@
+Example programs
+================
+
+Small programs to build against CGTK, each in a directory of its own
+with a Makefile.
+
+All but glarea/ come from the GTK+ 1.2 tutorial, whose text is no
+longer shipped. They show the API as GTK+ 1.2 had it, which CGTK
+keeps, and build and run unchanged. None of them uses what CGTK adds.
+glarea/ is CGTK's own, for GtkGLArea.
+
+Building
+--------
+
+The Makefiles use gtk-config, which has to be on PATH; for a prefix the
+dynamic linker does not search, see "Finding the libraries at run time"
+in ../INSTALL.
+
+"make" here builds every example but glarea/, which needs OpenGL and
+is built by "make" in glarea/. "make clean" removes what was built.
+
+The programs
+------------
+
+  base/             the smallest program: an empty window
+  helloworld/       a window with a button that quits it
+  helloworld2/      two buttons sharing one callback
+  packbox/          how boxes pack their children: run it with 1, 2 or 3
+  table/            buttons placed in a GtkTable
+  buttons/          a button holding a picture and a label
+  radiobuttons/     a group of radio buttons
+  rangewidgets/     scales and scrollbars sharing adjustments, with
+                    their options in menus
+  entry/            a GtkEntry, editable or not, its text shown or hidden
+  spinbutton/       spin buttons for dates and for numbers
+  calendar/         GtkCalendar and its options
+  progressbar/      a progress bar, with its text and activity mode
+  statusbar/        messages pushed onto and popped from a status bar
+  text/             GtkText, editable or not, words wrapped or not
+  clist/            GtkCList in a scrolled window
+  list/             GtkList, and a frame its selected item can be put in
+  tree/             GtkTree with subtrees
+  notebook/         a notebook: turning and removing pages, moving the tabs
+  menu/             a menu bar built by hand (menu.c) and by GtkItemFactory
+                    (itemfactory.c)
+  filesel/          the file selector
+  frame/            a GtkFrame and its label
+  aspectframe/      a frame that keeps its child's proportions
+  paned/            a pane divided between a list and a text
+  scrolledwin/      a table of buttons in a scrolled window
+  fixed/            buttons that move about a GtkFixed
+  packer/           GtkPacker and its options
+  eventbox/         an event box catching clicks on a label
+  rulers/           rulers that follow the pointer over a drawing area
+  scribble-simple/  drawing with the pointer into a pixmap
+  pixmap/           a picture from XPM data on a button
+  wheelbarrow/      a shaped window: a wheelbarrow with no frame
+  selection/        asking for the targets of the primary selection
+                    (gettargets.c) and claiming it (setselection.c)
+  tictactoe/        a composite widget made of other widgets
+  gtkdial/          a widget drawn from scratch: a dial
+  glarea/           GtkGLArea: glarea.c with the GL of glBegin and glEnd,
+                    as programs for GTK+ 1.2's GtkGLArea used it;
+                    glcore.c with a GL 3.3 core profile context; and
+                    glloop.c drawing without pause from the main loop
+
+find-examples.sh prints the examples' files in the form the top
+Makefile.am's EXTRA_DIST lists them, for when examples are added or
+removed.

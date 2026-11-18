@@ -1,0 +1,47 @@
+
+SUBDIRS =       aspectframe \
+                base \
+                buttons \
+                calendar \
+                clist \
+                entry \
+                eventbox \
+                filesel \
+                fixed \
+                frame \
+                gtkdial \
+                helloworld \
+                helloworld2 \
+                list \
+                menu \
+                notebook \
+                packbox \
+                packer \
+                paned \
+                pixmap \
+                progressbar \
+                radiobuttons \
+                rangewidgets \
+                rulers \
+                scribble-simple \
+                scrolledwin \
+                selection \
+                spinbutton \
+                statusbar \
+                table \
+                text \
+                tictactoe \
+                tree \
+                wheelbarrow
+
+all:
+	list='$(SUBDIRS)'; \
+	for subdir in $$list; do \
+	  (cd $$subdir && $(MAKE)); \
+	done
+
+clean:
+	list='$(SUBDIRS)'; \
+	for subdir in $$list; do \
+	  (cd $$subdir && $(MAKE) clean); \
+	done

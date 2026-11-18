@@ -1,0 +1,59 @@
+# Gelidus-Dark: Gelidus on a dark background. The engine is the same;
+# the colours are ThinIce-Dark's but for its highlight: selections, a
+# progress bar and the default button's corner are in the colour of a
+# highlighted menu item.
+#
+# base[ACTIVE] is what GTK+ 1's lists fill the space between their rows
+# with, so it matches base[NORMAL].
+
+style "gelidus-dark"
+{
+  fg[NORMAL]        = "#e2e2ea"
+  fg[ACTIVE]        = "#e2e2ea"
+  fg[PRELIGHT]      = "#ffffff"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#8a8a94"
+
+  bg[NORMAL]        = "#33333b"
+  bg[ACTIVE]        = "#292930"
+  bg[PRELIGHT]      = "#444b66"
+  bg[SELECTED]      = "#444b66"
+  bg[INSENSITIVE]   = "#33333b"
+
+  base[NORMAL]      = "#1e1e24"
+  base[ACTIVE]      = "#1e1e24"
+  base[PRELIGHT]    = "#1e1e24"
+  base[SELECTED]    = "#444b66"
+  base[INSENSITIVE] = "#292930"
+
+  text[NORMAL]      = "#e8e8f0"
+  text[ACTIVE]      = "#e8e8f0"
+  text[PRELIGHT]    = "#e8e8f0"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#8a8a94"
+
+  engine "gelidus"
+  {
+    # Square sliders, or with two corners cut off?
+    rect_scrollbar = FALSE
+
+    # On sliders and handles: NOTHING, SLASH, INVSLASH, DOT, INVDOT
+    mark_type1 = SLASH
+
+    # On scrollbar steppers: NOTHING, SLASH, INVSLASH, DOT, INVDOT, ARROW
+    mark_type2 = SLASH
+
+    # Along a paned widget's handle: NONE, SOME, FULL
+    paned_dots = SOME
+  }
+}
+
+style "gelidus-dark-progress-bar"
+{
+  bg[PRELIGHT]      = "#444b66"
+  fg[PRELIGHT]      = "#ffffff"
+  bg[NORMAL]        = "#292930"
+}
+
+class "GtkWidget" style "gelidus-dark"
+class "GtkProgressBar" style "gelidus-dark-progress-bar"

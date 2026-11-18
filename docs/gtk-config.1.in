@@ -1,0 +1,131 @@
+.TH GTK-CONFIG 1 "November 2026" "CGTK @VERSION@" "User Commands"
+.SH NAME
+gtk-config \- compiler and linker flags for programs built with CGTK
+.SH SYNOPSIS
+.B gtk-config
+.RB [ \-\-prefix [\fB=\fIDIR\fR]]
+.RB [ \-\-exec\-prefix [\fB=\fIDIR\fR]]
+.RB [ \-\-version ]
+.RB [ \-\-cflags ]
+.RB [ \-\-libs ]
+.RI [ library ...]
+.SH DESCRIPTION
+.B gtk-config
+prints the flags a C compiler and linker need to build a program with
+CGTK, the Classic GUI Toolkit, which keeps the API of GTK+ 1.2.
+It is the script GTK+ 1.2 had, kept so that makefiles and configure
+scripts written for GTK+ 1.2 build against CGTK unchanged.
+.PP
+It answers from the pkg-config files installed with CGTK, so it and
+.B \%pkg-config
+always agree: the
+.B gtk
+library is
+.IR gtk+-1.4 ,
+.B gthread
+adds
+.I gthread-1.4
+and
+.B gtkgl
+adds
+.IR gtkgl-1.4 .
+A new program can ask
+.B \%pkg-config
+for those names itself.
+.B glib-config
+does the same for GLib alone.
+.SH OPTIONS
+The options can be given in any order, and each that prints something
+prints it on a line of its own.
+.TP
+.B \-\-cflags
+Print the flags to compile with: where the headers are.
+.TP
+.B \-\-libs
+Print the flags to link with: the libraries and where they are.
+.TP
+.B \-\-version
+Print the version of CGTK that is installed, and nothing else.
+.TP
+.B \-\-prefix
+Print the prefix CGTK was installed under.
+.TP
+.BI \-\-prefix= DIR
+Print the flags for CGTK as if it were installed under
+.I DIR
+instead, for a copy that was moved after it was built.
+It is the exec prefix as well, unless
+.B \-\-exec\-prefix
+is given too.
+.TP
+.B \-\-exec\-prefix
+Print the exec prefix CGTK was installed under.
+.TP
+.BI \-\-exec\-prefix= DIR
+Take
+.I DIR
+as the exec prefix.
+.SH LIBRARIES
+With no library named,
+.B gtk
+is meant.
+.TP
+.B gtk
+GLib, GModule, GDK and GTK+.
+.TP
+.B gthread
+GTK+ and GLib's threads: GThread.
+.TP
+.B gtkgl
+GTK+ and GtkGLArea, the OpenGL widget, where CGTK was built with it.
+The library OpenGL itself is in is not given, as a window system's is
+not either: the program links that itself, usually by
+.BR "pkg-config \-\-libs opengl" .
+.SH EXIT STATUS
+0 on success.
+1 when it is run with nothing on its command line, an option or a
+library is not known, or
+pkg-config cannot find what was asked for; the reason is printed on
+standard error.
+.SH ENVIRONMENT
+.TP
+.B PKG_CONFIG
+The pkg-config program to run;
+.B \%pkg-config
+if it is not set.
+.TP
+.B PKG_CONFIG_PATH
+Where else to look for pkg-config files. The directory CGTK installed
+its own in is looked in first.
+.SH EXAMPLES
+Build a program:
+.PP
+.RS
+.nf
+cc `gtk-config \-\-cflags` hello.c \-o hello `gtk-config \-\-libs`
+.fi
+.RE
+.PP
+Build one that draws with OpenGL:
+.PP
+.RS
+.nf
+cc `gtk-config \-\-cflags gtkgl` cube.c \-o cube \e
+    `gtk-config \-\-libs gtkgl` `pkg-config \-\-libs opengl`
+.fi
+.RE
+.SH SEE ALSO
+.BR pkg-config (1),
+.BR cgtk-theme (1)
+.PP
+The README and INSTALL files of CGTK, and the AM_PATH_GTK macro of
+.IR gtk.m4 ,
+which configure scripts use.
+.SH COPYRIGHT
+Copyright \(co 1998 Owen Taylor
+.PP
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appear in all copies and that
+both that copyright notice and this permission notice appear in
+supporting documentation.

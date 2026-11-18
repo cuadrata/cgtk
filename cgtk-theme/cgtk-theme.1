@@ -1,0 +1,121 @@
+.TH CGTK-THEME 1 "November 2026" "CGTK 1.4" "User Commands"
+.SH NAME
+cgtk-theme \- choose and edit the theme of CGTK programs
+.SH SYNOPSIS
+.B cgtk-theme
+.RB [ \-\-dark | \-\-light ]
+.RB [ \-f
+.IR font ]
+.RI [ theme ]
+.br
+.B cgtk-theme \-l
+.SH DESCRIPTION
+.B cgtk-theme
+chooses the theme and the font that programs built with CGTK use, and
+edits themes.
+.PP
+With no arguments it opens a window. The window shows the theme being
+edited on itself, and its preview shows a little of every kind of
+widget a theme draws: menus, a toolbar, buttons and a default button,
+check and radio buttons, fields, a notebook with a list, text and
+scales, a progress bar, a scrollbar, a sunken and a raised frame either
+side of a pane's handle, with a tree and arrows in them, and a status
+bar, with some of them disabled. Choose a theme from the list,
+and with
+.B Dark
+its dark version, then change its
+colours on the Colours page, the font on the Font page, and what its
+engine offers on the Options page. The six colours at the top of the
+Colours page take the others of their kind with them; below them are
+all twenty, each on its own. With "Apply as you edit", running CGTK programs follow each
+change a moment after it is made; otherwise
+.B Apply
+makes them follow.
+.PP
+Themes installed with the toolkit are never changed. Editing one makes
+a copy of it among your own themes, named for it ("Altus Custom"), or
+under the name given with
+.BR "Save As" .
+Your own themes are changed in place, and can be deleted.
+.PP
+A theme
+.I Foo
+and a theme
+.I Foo-Dark
+are the light and dark versions of one theme, and the list shows them as
+one. The
+.B Dark
+check box chooses between them, and stays as it was set when another
+theme is chosen, for as long as that theme has a dark version too. Every
+theme installed with the toolkit has one. Editing an installed dark
+version makes a copy called
+.IR "Foo Custom-Dark" ,
+the dark version of a copy of
+.IR Foo .
+.SH OPTIONS
+.TP
+.I theme
+Use
+.IR theme :
+the name of a theme, or the directory of one.
+.TP
+.B \-\-dark
+Use the dark version of
+.IR theme ,
+or of the theme in use.
+.TP
+.B \-\-light
+Use the light version of
+.IR theme ,
+or of the theme in use.
+.TP
+.BR \-f ", " \-\-font " \fIfont\fR"
+Use
+.I font
+in every theme, named as "Sans 10" or "DejaVu Serif Bold 12". An empty
+.I font
+goes back to each theme's own.
+.TP
+.BR \-l ", " \-\-list
+List the themes there are, marking the one in use.
+.TP
+.BR \-h ", " \-\-help
+Show a summary of the options.
+.PP
+Running programs are told of a new theme or font as soon as it is set.
+.SH FILES
+.TP
+.I $XDG_CONFIG_HOME/gtk-1.0/gtkrc
+The rc file every CGTK program reads, in
+.I ~/.config
+unless
+.I XDG_CONFIG_HOME
+says otherwise.
+.B cgtk-theme
+writes it: it includes the theme chosen, sets the font if one was
+chosen, and includes
+.I gtkrc.mine
+beside it, where settings of your own belong.
+.TP
+.IR $XDG_DATA_HOME/themes/ name /gtk-1.4/gtkrc
+A theme of your own, in
+.I ~/.local/share
+unless
+.I XDG_DATA_HOME
+says otherwise.
+.TP
+.IR datadir /themes/ name /gtk-1.4/gtkrc
+A theme installed with the toolkit. A theme written for GTK+ 1.2, with
+.I gtk/gtkrc
+in place of
+.IR gtk-1.4/gtkrc ,
+can be chosen and edited too.
+.SH NOTES
+Programs hear of a change through the X server when they use the X11
+backend, and through sockets in
+.I $XDG_RUNTIME_DIR/cgtk
+on any backend. A program started without
+.I XDG_RUNTIME_DIR
+set, on Wayland, sees a new theme only when it is next started.
+.SH SEE ALSO
+The README and ChangeLog files of CGTK.

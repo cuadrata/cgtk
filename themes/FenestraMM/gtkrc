@@ -1,0 +1,61 @@
+# FenestraMM: the classic look of Windows 2000, as Office 2000 had it, drawn
+# by the engine built into the library. Push buttons, scrollbars, tabs
+# and fields have Windows' two-pixel bevels; toolbars are Office's,
+# flat, with grips, and buttons that show an edge only under the
+# pointer. The colours are Windows 2000's own.
+#
+# The engine's options are the four colours of a bevel besides the
+# face, which Windows calls the highlight, the light, the shadow and the
+# dark shadow.
+
+style "fenestramm"
+{
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#808080"
+
+  bg[NORMAL]        = "#d4d0c8"
+  bg[ACTIVE]        = "#d4d0c8"
+  bg[PRELIGHT]      = "#d4d0c8"
+  bg[SELECTED]      = "#0a246a"
+  bg[INSENSITIVE]   = "#d4d0c8"
+
+  base[NORMAL]      = "#ffffff"
+  base[ACTIVE]      = "#ffffff"
+  base[PRELIGHT]    = "#ffffff"
+  base[SELECTED]    = "#0a246a"
+  base[INSENSITIVE] = "#d4d0c8"
+
+  text[NORMAL]      = "#000000"
+  text[ACTIVE]      = "#000000"
+  text[PRELIGHT]    = "#000000"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#808080"
+
+  engine "fenestramm"
+  {
+    highlight   = "#ffffff"
+    light       = "#d4d0c8"
+    shadow      = "#808080"
+    dark_shadow = "#404040"
+  }
+}
+
+# A menu's highlighted item is in the selection's navy
+style "fenestramm-menu"
+{
+  bg[PRELIGHT]      = "#0a246a"
+  fg[PRELIGHT]      = "#ffffff"
+}
+
+style "fenestramm-tooltips"
+{
+  bg[NORMAL]        = "#ffffe1"
+  fg[NORMAL]        = "#000000"
+}
+
+class "GtkWidget" style "fenestramm"
+widget_class "*GtkMenu.*" style "fenestramm-menu"
+widget "gtk-tooltips" style "fenestramm-tooltips"

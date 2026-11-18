@@ -1,0 +1,39 @@
+# Priscus-Dark: GTK+ 1.2's own look, from the engine built into the
+# library, on a dark background. GTK+ 1.2 had no dark colours; these
+# keep its relations between them, the other way up: a pressed button
+# darker than the window and one under the pointer lighter, fields
+# darker than the window and a disabled field between the two. The
+# selection is GTK+ 1.2's pure blue, lightened to show on dark grey.
+
+style "priscus-dark"
+{
+  fg[NORMAL]        = "#e6e6e6"
+  fg[ACTIVE]        = "#e6e6e6"
+  fg[PRELIGHT]      = "#e6e6e6"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#8c8c8c"
+
+  bg[NORMAL]        = "#474747"
+  bg[ACTIVE]        = "#343434"
+  bg[PRELIGHT]      = "#5a5a5a"
+  bg[SELECTED]      = "#3030b0"
+  bg[INSENSITIVE]   = "#474747"
+
+  base[NORMAL]      = "#2a2a2a"
+  base[ACTIVE]      = "#2a2a2a"
+  base[PRELIGHT]    = "#2a2a2a"
+  base[SELECTED]    = "#2a2a2a"
+  base[INSENSITIVE] = "#383838"
+
+  text[NORMAL]      = "#e6e6e6"
+  text[ACTIVE]      = "#e6e6e6"
+  text[PRELIGHT]    = "#e6e6e6"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#8c8c8c"
+
+  engine "priscus"
+  {
+  }
+}
+
+class "GtkWidget" style "priscus-dark"

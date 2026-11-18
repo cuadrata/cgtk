@@ -1,0 +1,269 @@
+# GTK doysyesinin Azəri türkçəsinə tərcüməsi
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Vasif Ismailoglu MD <azerb_linux@hotmail.com>, 2000-2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cgtk 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 23:56+0000\n"
+"PO-Revision-Date: 2026-11-17 23:00+0000\n"
+"Last-Translator: Vasif Ismailoglu MD <azerb_linux@hotmail.com>\n"
+"Language-Team: Azerbaijani turkish \n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gtk/gtkcolorsel.c:220
+msgid "Hue:"
+msgstr "Çöhrə:"
+
+#: gtk/gtkcolorsel.c:221
+msgid "Saturation:"
+msgstr "Doyqunluq:"
+
+#: gtk/gtkcolorsel.c:222
+msgid "Value:"
+msgstr "Qiymət:"
+
+#: gtk/gtkcolorsel.c:223
+msgid "Red:"
+msgstr "Qırmızı:"
+
+#: gtk/gtkcolorsel.c:224
+msgid "Green:"
+msgstr "Yaşıl:"
+
+#: gtk/gtkcolorsel.c:225
+msgid "Blue:"
+msgstr "Göy:"
+
+#: gtk/gtkcolorsel.c:226
+msgid "Opacity:"
+msgstr "Şəffaflıq:"
+
+#: gtk/gtkcolorsel.c:1721 gtk/gtkfilesel.c:1362 gtk/gtkfontsel.c:1002
+#: gtk/gtkgamma.c:415 gtk/gtkmessagedialog.c:120 gtk/gtkmessagedialog.c:133
+msgid "OK"
+msgstr "OLDU"
+
+#: gtk/gtkcolorsel.c:1727 gtk/gtkfilesel.c:1385 gtk/gtkfilesel.c:1886
+#: gtk/gtkfilesel.c:1987 gtk/gtkfilesel.c:2107 gtk/gtkfontsel.c:1015
+#: gtk/gtkgamma.c:423 gtk/gtkmessagedialog.c:126 gtk/gtkmessagedialog.c:134
+msgid "Cancel"
+msgstr "Ləğv et"
+
+#: gtk/gtkcolorsel.c:1732
+msgid "Help"
+msgstr "Kömək"
+
+#: gtk/gtkeditable.c:1537
+msgid "Undo"
+msgstr "Geri al"
+
+#: gtk/gtkeditable.c:1538
+msgid "Redo"
+msgstr "Təkrarla"
+
+#: gtk/gtkeditable.c:1540
+msgid "Cut"
+msgstr "Kəs"
+
+#: gtk/gtkeditable.c:1541
+msgid "Copy"
+msgstr "Köçür"
+
+#: gtk/gtkeditable.c:1542
+msgid "Paste"
+msgstr "Yapışdır"
+
+#: gtk/gtkeditable.c:1543 gtk/gtkfilesel.c:1978
+msgid "Delete"
+msgstr "Sil"
+
+#: gtk/gtkeditable.c:1545
+msgid "Select All"
+msgstr "Hamısını Seç"
+
+#: gtk/gtkfilesel.c:799
+msgid "All Files"
+msgstr "Bütün Fayllar"
+
+#: gtk/gtkfilesel.c:963
+msgid "Name"
+msgstr "Ad"
+
+#: gtk/gtkfilesel.c:963
+msgid "Size"
+msgstr "Böyüklük"
+
+#: gtk/gtkfilesel.c:963
+msgid "Date Modified"
+msgstr "Dəyişdirilmə"
+
+#: gtk/gtkfilesel.c:1056
+msgid "Home"
+msgstr "Ev"
+
+#: gtk/gtkfilesel.c:1057
+msgid "File System"
+msgstr "Fayl Sistemi"
+
+#: gtk/gtkfilesel.c:1229
+msgid "Remove from Places"
+msgstr "Yerlərdən Sil"
+
+#: gtk/gtkfilesel.c:1237
+msgid "Look in:"
+msgstr "Baxılacaq yer:"
+
+#: gtk/gtkfilesel.c:1254
+msgid "Add to Places"
+msgstr "Yerlərə Əlavə Et"
+
+#: gtk/gtkfilesel.c:1255
+msgid "Show Hidden Files"
+msgstr "Gizli Faylları Göstər"
+
+#: gtk/gtkfilesel.c:1351
+msgid "File name:"
+msgstr "Fayl adı:"
+
+#: gtk/gtkfilesel.c:1375
+msgid "Files of type:"
+msgstr "Fayl növü:"
+
+#: gtk/gtkfilesel.c:1396 gtk/gtkfilesel.c:2532
+#, c-format
+msgid "Directory unreadable: %s"
+msgstr "Qovluq oxuna bilmir: %s"
+
+#: gtk/gtkfilesel.c:1437 gtk/gtkfilesel.c:1445
+msgid "Create Dir"
+msgstr "Qovluq yarat"
+
+#: gtk/gtkfilesel.c:1455 gtk/gtkfilesel.c:2060
+msgid "Rename File"
+msgstr "Fayl Adını Dəyişdir"
+
+#: gtk/gtkfilesel.c:1465 gtk/gtkfilesel.c:1955
+msgid "Delete File"
+msgstr "Faylı Sil"
+
+#: gtk/gtkfilesel.c:1746
+msgid "Error"
+msgstr "Xəta"
+
+#: gtk/gtkfilesel.c:1770 gtk/gtkinputdialog.c:149 gtk/gtkmessagedialog.c:123
+msgid "Close"
+msgstr "Qapat"
+
+#: gtk/gtkfilesel.c:1845
+msgid "Create Directory"
+msgstr "Qovluq Yarat"
+
+#: gtk/gtkfilesel.c:1860
+msgid "Directory name:"
+msgstr "Qovluq Adı:"
+
+#: gtk/gtkfilesel.c:1877
+msgid "Create"
+msgstr "Yarat"
+
+#: gtk/gtkfilesel.c:2098
+msgid "Rename"
+msgstr "Təzədən Adlandır"
+
+#: gtk/gtkfilesel.c:2508
+msgid "Selection: "
+msgstr "Seçki:"
+
+#: gtk/gtkfontsel.c:332
+msgid "Size (px):"
+msgstr "Ölçü (px):"
+
+#: gtk/gtkfontsel.c:332 gtk/gtkfontsel.c:659
+msgid "Size (pt):"
+msgstr "Ölçü (pt):"
+
+#: gtk/gtkfontsel.c:539
+#, c-format
+msgid "%s (bitmap)"
+msgstr "%s (bitmap)"
+
+#: gtk/gtkfontsel.c:650
+msgid "Font"
+msgstr "YazıTipi"
+
+#: gtk/gtkfontsel.c:657
+msgid "Family:"
+msgstr "Ailə:"
+
+#: gtk/gtkfontsel.c:658
+msgid "Style:"
+msgstr "Üslub:"
+
+#: gtk/gtkfontsel.c:671
+msgid "Preview:"
+msgstr "İlk Baxış:"
+
+#: gtk/gtkfontsel.c:1009
+msgid "Apply"
+msgstr "Tətbiq Et"
+
+#: gtk/gtkfontsel.c:1031
+msgid "Font Selection"
+msgstr "Yazıtipi seçkisi"
+
+#: gtk/gtkgamma.c:395
+msgid "Gamma"
+msgstr "Qamma"
+
+#: gtk/gtkgamma.c:402
+msgid "Gamma value"
+msgstr "Qamma qiyməti"
+
+#: gtk/gtkinputdialog.c:126
+msgid "Input"
+msgstr "Giriş"
+
+#: gtk/gtkinputdialog.c:134
+msgid "No input devices"
+msgstr "Giriş avadanlıqları yoxdur"
+
+#: gtk/gtkinputdialog.c:141
+msgid "Save"
+msgstr "Qeyd Et"
+
+#: gtk/gtkmessagedialog.c:129
+msgid "Yes"
+msgstr "Bəli"
+
+#: gtk/gtkmessagedialog.c:130
+msgid "No"
+msgstr "Xeyr"
+
+#: gtk/gtknotebook.c:2053 gtk/gtknotebook.c:4182
+#, c-format
+msgid "Page %u"
+msgstr "Səhifə %u"
+
+#: gtk/gtkrc.c:1708
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\" line %d"
+msgstr "Pixmap_path dəki rəsm faylının yeri tapıla bilmir: \"%s\" xətt %d"
+
+#: gtk/gtkrc.c:1711
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\""
+msgstr "Pixmap_path dəki rəsm faylının yeri tapıla bilmir: \"%s\""
+
+#: gtk/gtkthemes.c:125
+#, c-format
+msgid "Unable to locate loadable module in module_path: \"%s\","
+msgstr "Module_path dəki modulun yeri tapıla bilmir: \"%s\","
+
+#: gtk/gtktipsquery.c:179
+msgid "--- No Tip ---"
+msgstr "--- Qeyd Yoxdur ---"

@@ -1,0 +1,272 @@
+# gtk+.po
+# Copyright (C) 1998-2001 Free Software Foundation, Inc.
+# Vincent Renardias <vincent@debian.org>, 1998-1999.
+# Christophe Merlet (RedFox) <redfox@eikonex.org>, 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cgtk 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 23:56+0000\n"
+"PO-Revision-Date: 2026-11-17 23:00+0000\n"
+"Last-Translator: Christophe Merlet (RedFox) <redfox@eikonex.org>\n"
+"Language-Team: GNOME French Team <gnomefr@gnomefr.traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gtk/gtkcolorsel.c:220
+msgid "Hue:"
+msgstr "Teinte :"
+
+#: gtk/gtkcolorsel.c:221
+msgid "Saturation:"
+msgstr "Saturation :"
+
+#: gtk/gtkcolorsel.c:222
+msgid "Value:"
+msgstr "Valeur :"
+
+#: gtk/gtkcolorsel.c:223
+msgid "Red:"
+msgstr "Rouge :"
+
+#: gtk/gtkcolorsel.c:224
+msgid "Green:"
+msgstr "Vert :"
+
+#: gtk/gtkcolorsel.c:225
+msgid "Blue:"
+msgstr "Bleu :"
+
+#: gtk/gtkcolorsel.c:226
+msgid "Opacity:"
+msgstr "Opacité :"
+
+#: gtk/gtkcolorsel.c:1721 gtk/gtkfilesel.c:1362 gtk/gtkfontsel.c:1002
+#: gtk/gtkgamma.c:415 gtk/gtkmessagedialog.c:120 gtk/gtkmessagedialog.c:133
+msgid "OK"
+msgstr "Valider"
+
+#: gtk/gtkcolorsel.c:1727 gtk/gtkfilesel.c:1385 gtk/gtkfilesel.c:1886
+#: gtk/gtkfilesel.c:1987 gtk/gtkfilesel.c:2107 gtk/gtkfontsel.c:1015
+#: gtk/gtkgamma.c:423 gtk/gtkmessagedialog.c:126 gtk/gtkmessagedialog.c:134
+msgid "Cancel"
+msgstr "Annuler"
+
+#: gtk/gtkcolorsel.c:1732
+msgid "Help"
+msgstr "Aide"
+
+#: gtk/gtkeditable.c:1537
+msgid "Undo"
+msgstr "Annuler"
+
+#: gtk/gtkeditable.c:1538
+msgid "Redo"
+msgstr "Rétablir"
+
+#: gtk/gtkeditable.c:1540
+msgid "Cut"
+msgstr "Couper"
+
+#: gtk/gtkeditable.c:1541
+msgid "Copy"
+msgstr "Copier"
+
+#: gtk/gtkeditable.c:1542
+msgid "Paste"
+msgstr "Coller"
+
+#: gtk/gtkeditable.c:1543 gtk/gtkfilesel.c:1978
+msgid "Delete"
+msgstr "Effacer"
+
+#: gtk/gtkeditable.c:1545
+msgid "Select All"
+msgstr "Tout sélectionner"
+
+#: gtk/gtkfilesel.c:799
+msgid "All Files"
+msgstr "Tous les fichiers"
+
+#: gtk/gtkfilesel.c:963
+msgid "Name"
+msgstr "Nom"
+
+#: gtk/gtkfilesel.c:963
+msgid "Size"
+msgstr "Taille"
+
+#: gtk/gtkfilesel.c:963
+msgid "Date Modified"
+msgstr "Modifié"
+
+#: gtk/gtkfilesel.c:1056
+msgid "Home"
+msgstr "Dossier personnel"
+
+#: gtk/gtkfilesel.c:1057
+msgid "File System"
+msgstr "Système de fichiers"
+
+#: gtk/gtkfilesel.c:1229
+msgid "Remove from Places"
+msgstr "Retirer des emplacements"
+
+#: gtk/gtkfilesel.c:1237
+msgid "Look in:"
+msgstr "Voir dans :"
+
+#: gtk/gtkfilesel.c:1254
+msgid "Add to Places"
+msgstr "Ajouter aux emplacements"
+
+#: gtk/gtkfilesel.c:1255
+msgid "Show Hidden Files"
+msgstr "Afficher les fichiers cachés"
+
+#: gtk/gtkfilesel.c:1351
+msgid "File name:"
+msgstr "Nom du fichier :"
+
+#: gtk/gtkfilesel.c:1375
+msgid "Files of type:"
+msgstr "Fichiers de type :"
+
+#: gtk/gtkfilesel.c:1396 gtk/gtkfilesel.c:2532
+#, c-format
+msgid "Directory unreadable: %s"
+msgstr "Répertoire illisible : %s"
+
+#: gtk/gtkfilesel.c:1437 gtk/gtkfilesel.c:1445
+msgid "Create Dir"
+msgstr "Créer un répertoire"
+
+#: gtk/gtkfilesel.c:1455 gtk/gtkfilesel.c:2060
+msgid "Rename File"
+msgstr "Renommer le fichier"
+
+#: gtk/gtkfilesel.c:1465 gtk/gtkfilesel.c:1955
+msgid "Delete File"
+msgstr "Supprimer le fichier"
+
+#: gtk/gtkfilesel.c:1746
+msgid "Error"
+msgstr "Erreur"
+
+#: gtk/gtkfilesel.c:1770 gtk/gtkinputdialog.c:149 gtk/gtkmessagedialog.c:123
+msgid "Close"
+msgstr "Fermer"
+
+#: gtk/gtkfilesel.c:1845
+msgid "Create Directory"
+msgstr "Créez un répertoire"
+
+#: gtk/gtkfilesel.c:1860
+msgid "Directory name:"
+msgstr "Nom du répertoire :"
+
+#: gtk/gtkfilesel.c:1877
+msgid "Create"
+msgstr "Créer"
+
+#: gtk/gtkfilesel.c:2098
+msgid "Rename"
+msgstr "Renommer"
+
+#: gtk/gtkfilesel.c:2508
+msgid "Selection: "
+msgstr "Sélection : "
+
+#: gtk/gtkfontsel.c:332
+msgid "Size (px):"
+msgstr "Taille (px) :"
+
+#: gtk/gtkfontsel.c:332 gtk/gtkfontsel.c:659
+msgid "Size (pt):"
+msgstr "Taille (pt) :"
+
+#: gtk/gtkfontsel.c:539
+#, c-format
+msgid "%s (bitmap)"
+msgstr "%s (matricielle)"
+
+#: gtk/gtkfontsel.c:650
+msgid "Font"
+msgstr "Police"
+
+#: gtk/gtkfontsel.c:657
+msgid "Family:"
+msgstr "Famille :"
+
+#: gtk/gtkfontsel.c:658
+msgid "Style:"
+msgstr "Style :"
+
+#: gtk/gtkfontsel.c:671
+msgid "Preview:"
+msgstr "Aperçu :"
+
+#: gtk/gtkfontsel.c:1009
+msgid "Apply"
+msgstr "Appliquer"
+
+#: gtk/gtkfontsel.c:1031
+msgid "Font Selection"
+msgstr "Sélection de police"
+
+#: gtk/gtkgamma.c:395
+msgid "Gamma"
+msgstr "Gamma"
+
+#: gtk/gtkgamma.c:402
+msgid "Gamma value"
+msgstr "Valeur gamma"
+
+#: gtk/gtkinputdialog.c:126
+msgid "Input"
+msgstr "Entrée"
+
+#: gtk/gtkinputdialog.c:134
+msgid "No input devices"
+msgstr "Pas de périphérique d'entrée"
+
+#: gtk/gtkinputdialog.c:141
+msgid "Save"
+msgstr "Enregistrer"
+
+#: gtk/gtkmessagedialog.c:129
+msgid "Yes"
+msgstr "Oui"
+
+#: gtk/gtkmessagedialog.c:130
+msgid "No"
+msgstr "Non"
+
+#: gtk/gtknotebook.c:2053 gtk/gtknotebook.c:4182
+#, c-format
+msgid "Page %u"
+msgstr "Page %u"
+
+#: gtk/gtkrc.c:1708
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\" line %d"
+msgstr ""
+"Impossible de localiser le fichier image dans pixmap_path : « %s » ligne %d"
+
+#: gtk/gtkrc.c:1711
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\""
+msgstr "Impossible de localiser le fichier image dans pixmap_path : « %s »"
+
+#: gtk/gtkthemes.c:125
+#, c-format
+msgid "Unable to locate loadable module in module_path: \"%s\","
+msgstr ""
+"Impossible de localiser le module chargeable dans module_path : « %s »,"
+
+#: gtk/gtktipsquery.c:179
+msgid "--- No Tip ---"
+msgstr "--- Pas de conseil ---"

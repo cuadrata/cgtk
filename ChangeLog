@@ -1,0 +1,176 @@
+CGTK 1.4.0
+==========
+
+CGTK, the Classic GUI Toolkit, is GTK+ 1.2.10 and GLib 1.2.10 brought
+to modern systems. This is its first release. The API is GTK+ 1.2's:
+programs written for GTK+ 1.2 build against it with few changes or none.
+The libraries are versioned 1.4 (libgtk-1.4, gtk+-1.4.pc), and the 1.2
+pkg-config names, gtk-config, glib-config, gtk.m4 and glib.m4 are still
+installed.
+
+Drawing and windows
+* GDK draws into framebuffers, and a window system is a backend chosen
+  at run time (GDK_BACKEND): X11 and Wayland, either or both built in.
+  Child windows are GDK's own, not the window system's.
+* Running programs follow theme changes through sockets in
+  $XDG_RUNTIME_DIR/cgtk.
+* Wayland: xdg-shell toplevels and popups, window groups, client-side
+  decorations, drag and drop, copy and paste with PRIMARY, text input,
+  and wheel and touchpad scrolling.
+* Scaling for displays above 96 dpi, on both backends, from the desktop's
+  setting.
+* Anti-aliased drawing for theme engines, and gdk_draw_rgba_image_scaled()
+  for images with an alpha channel, laid over what is there.
+* PNG files are read, with libpng: gdk_png_load() and
+  gdk_png_load_from_data() give the pixels that
+  gdk_draw_rgba_image_scaled() draws, and gdk_pixmap_create_from_png()
+  a pixmap and its mask, as gdk_pixmap_create_from_xpm() does of an
+  XPM file. gdk_png_load_straight() and
+  gdk_png_load_from_data_straight() give the colours as the file has
+  them, not multiplied by the alpha.
+* SVG files are drawn, by an internal renderer, which is based on NanoSVG
+  and needs no library: gdk_svg_load() and gdk_svg_load_from_data() read
+  a picture, gdk_svg_render() and gdk_svg_render_area() draw it at any
+  size into the same pixels, and gdk_pixmap_create_from_svg() makes a
+  pixmap and its mask of one. gdk_svg_render_straight() and
+  gdk_svg_render_area_straight() give the colours not multiplied by the
+  alpha, for a program that lays its pictures over one another itself. It
+  knows paths, shapes, strokes, fills, gradients and style sheets of plain
+  class selectors, but not (yet) text, <use>, clipping, masks or filters.
+* A window's icon in colour on X11, as _NET_WM_ICON, in the sizes a
+  window manager and a panel choose from.
+  gtk_window_set_default_icon_name(), once in main(), gives every
+  window the icon the program is installed with, found by the name its
+  desktop file has for it under icons/hicolor: the PNG files, or the
+  SVG file drawn where there are none. gtk_window_set_icon_name() is
+  for one window, and gdk_window_set_themed_icon() and
+  gdk_window_set_icon_images() are what they call. On Wayland the
+  icon is given by the xdg-toplevel-icon protocol to a compositor that
+  has it (wayland-protocols 1.37 to build it in); one that has not
+  finds the icon by the desktop file, as before.
+
+Text
+* All text is drawn with FreeType and found with fontconfig. Fonts are
+  named "Sans 10", "DejaVu Sans Bold 11" and so on; X font names are
+  still read, and bitmap fonts drawn as they were. The font selector
+  shows the system's fonts.
+* Text is UTF-8, or the locale's own encoding, and passes in and out of
+  wide characters unchanged. GtkEntry and GtkText keep characters.
+* Input methods through GtkIMContext, as in GTK+ 2: XIM on X11, the text
+  input protocol on Wayland, and dead keys and compose with neither.
+  The GTK+ 1.2 gdk_im_* and gdk_ic_* calls remain, and do nothing.
+* Copy, cut and paste menus in GtkEntry and GtkText; UTF8_STRING first
+  when pasting.
+* GtkText scrolls sideways, by its horizontal adjustment, when line wrap
+  is off. GTK+ 1.2 cut such lines off at the edge of the window.
+* Undo and redo in GtkEntry and GtkText, and what is built on them: of
+  what the user typed, cut, pasted or deleted, typing a word at a time,
+  by Ctrl+Z, by Ctrl+Shift+Z or Ctrl+Y, and from the right-click menu.
+  gtk_editable_undo(), gtk_editable_redo(), gtk_editable_can_undo()
+  and gtk_editable_can_redo() are for a program's own menus, and a
+  program's own changes are undone with the user's when made between
+  gtk_editable_begin_user_action() and gtk_editable_end_user_action(),
+  GTK+ 2's names. Its other changes cannot be undone and start the
+  history afresh, and nothing is kept for an entry whose text is
+  hidden.
+
+Dialogs
+* From GTK+ 2, by its names: gtk_dialog_add_button(), the "response"
+  signal and gtk_dialog_run() for GtkDialog; and GtkMessageDialog,
+  which says one thing and has the buttons to answer it. No icon is
+  drawn in a message.
+* The file selector is laid out anew: one list, of directories and then
+  files, with sizes and dates and titles that sort it; places at the
+  side, that the user adds to by the right button on a folder or on
+  the places, and that are kept in $XDG_CONFIG_HOME/cgtk/bookmarks;
+  back, forward and up; and the name
+  and the kinds of file at the foot, beside OK and Cancel. Hidden files,
+  renaming and deleting are in the list's menu. The functions and the
+  fields of GtkFileSelection are those of GTK+ 1.2, dir_list is still
+  filled, though it is not shown, and OK and Cancel are in a box of
+  their own still, for programs that put a button of theirs with
+  them: with a third in it the box is a row under the fields, as it
+  was. New:
+  gtk_file_selection_add_filter(), gtk_file_selection_set_show_hidden(),
+  and, as in GTK+ 2, gtk_file_selection_set_select_multiple() and
+  gtk_file_selection_get_selections().
+
+GLib
+* From GLib 2, by its names and with its arguments: GError; UTF-8
+  strings (g_utf8_*, g_unichar_*); g_convert() and its relations, by
+  iconv(); g_file_get_contents() and g_file_set_contents(), g_file_test(),
+  g_build_filename(), g_mkdir_with_parents(), g_find_program_in_path();
+  file: URIs; and the XDG directories (g_get_user_config_dir() and the
+  rest). The C library says what a letter is: there are no tables of
+  Unicode.
+* Also from GLib 2: programs started, with pipes or without, and
+  waited for (g_spawn_*, g_child_watch_add()); command lines taken apart
+  as a shell takes them (g_shell_parse_argv(), g_shell_quote());
+  key files, which .desktop files are (g_key_file_*); and
+  g_ascii_strtod(), g_ascii_dtostr() and g_strv_length().
+* gsize and gssize are size_t and its signed twin, not 32 bits.
+
+Themes
+* Eight built-in theme engines (all with Dark variants):
+    Altus (the default, after Mist)
+    Clarus (ported from Clearlooks)
+    Fabrica (after Industrial),
+    FenestraMM (after Windows 2000),
+    Gelidus (after ThinIce),
+    Metallum (after Metal),
+    Unicus (after Adwaita)
+    Priscus (the original GTK+ 1.2 built-in theme engine)
+* cgtk-theme chooses the theme and font, and edits themes: their colours,
+  a few at once or all of them, and their engines' options, which
+  running programs follow as they change. Editing an installed theme
+  makes a copy of it among the user's themes. Its Dark check box, or
+  --dark and --light, chooses between a theme's light and dark versions.
+* The font chosen in a theme is used in every locale; the per-locale
+  gtkrc files with X fontsets are gone.
+* The user's rc file is $XDG_CONFIG_HOME/gtk-1.0/gtkrc, which is
+  ~/.config/gtk-1.0/gtkrc by default, and the user's themes are in
+  $XDG_DATA_HOME/themes, ~/.local/share/themes by default. Loadable
+  theme engines of the user's own go in $XDG_DATA_HOME/gtk-1.4/engines,
+  ~/.local/share/gtk-1.4/engines by default. gtk_rc_get_user_file(),
+  gtk_rc_get_user_theme_dir() and gtk_rc_get_user_module_dir() give
+  them. ~/.gtkrc, ~/.themes and ~/.gtk-1.4/engines are not read.
+
+New
+* GtkGLArea, in libgtkgl-1.4, draws OpenGL through EGL on X11 and
+  Wayland, paced to the display's refresh.
+
+Removed
+* Motif drag and drop, X Input extension devices (the core pointer is
+  the one device), gxid, and the X_LOCALE and native-locale code.
+* Static gravity: gdk_window_set_static_gravities does nothing, as in
+  GTK+ 3, and gdk_window_set_child_shapes and merge_child_shapes do
+  nothing.
+* Ports to systems without C99 and POSIX, threadless GLib
+  (--disable-threads) and builds without FreeType.
+* The GTK+ 1.2 tutorial, FAQ and Texinfo manuals, and the notes in
+  docs/, which described GTK+ 1.2 and were out of date. The README,
+  NEWS, ChangeLog and other notes of GTK+ 1.2.10 and GLib 1.2.10 are
+  in history/, as they were released.
+
+Fixes, besides many found in porting
+* Drag and drop by pointer, which dropped every grabbed event.
+* A heap overflow from XPM images wider than 16383 pixels.
+* GtkLayout scrolling, which never moved its children on X11.
+* gtk_editable_insert_text with a length of -1, which overran the
+  stack.
+* g_strdup_printf and friends with %zu, %td and %jd.
+* GtkHandleBox keeps its child inside its edges, so that a toolbar's
+  buttons no longer cover them.
+* gtk_editable_set_position on a GtkText with a position of -1, the
+  end, as for GtkEntry, or past the end, which crashed.
+
+Building
+* One build for GLib and GTK+. No configure script is shipped: run
+  autoreconf -vif first (see INSTALL). Cross-compiling is supported.
+* POSIX threads, iconv, FreeType and fontconfig are required.
+* Translations are UTF-8, under the domain cgtk. All 38 catalogues are
+  complete, and every one was checked string by string: Serbian is in
+  one script throughout, Romanian uses comma-below letters, and wrong
+  or untranslated strings were fixed. The strings new in CGTK were
+  machine translated and have not been reviewed by native speakers.
+* The libraries and cgtk-theme are under the LGPL 2.1 or later.

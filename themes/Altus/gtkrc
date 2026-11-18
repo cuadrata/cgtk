@@ -1,0 +1,80 @@
+# Altus: the toolkit's default theme, a flat look drawn by the engine
+# built into the library. It was ported from the Mist engine and
+# theme of gtk-engines 2.20.2, and has Mist's colours but for its
+# accent, a soft purple shared with Altus-Dark.
+#
+# Every colour the engine draws with is set here: the accent is the
+# SELECTED colours of bg and base. base[ACTIVE] is what GTK+ 1's lists
+# fill the space between their rows with, so it matches base[NORMAL];
+# Mist's darker accent there was for GTK+ 2's unfocused selections.
+
+style "altus"
+{
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#777777"
+
+  bg[NORMAL]        = "#eaeaea"
+  bg[ACTIVE]        = "#d3d3d3"
+  bg[PRELIGHT]      = "#f1f1f1"
+  bg[SELECTED]      = "#7966d8"
+  bg[INSENSITIVE]   = "#dedede"
+
+  base[NORMAL]      = "#ffffff"
+  base[ACTIVE]      = "#ffffff"
+  base[PRELIGHT]    = "#eaeaea"
+  base[SELECTED]    = "#7966d8"
+  base[INSENSITIVE] = "#f2f2f2"
+
+  text[NORMAL]      = "#000000"
+  text[ACTIVE]      = "#000000"
+  text[PRELIGHT]    = "#000000"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#808080"
+
+  engine "altus"
+  {
+  }
+}
+
+# Menus and their items have a frame two pixels thick, and an item's
+# text is in the selected colour while it is highlighted.
+style "altus-menu"
+{
+  engine "altus"
+  {
+    xthickness = 2
+    ythickness = 2
+  }
+}
+
+style "altus-menuitem"
+{
+  fg[PRELIGHT]      = "#ffffff"
+
+  engine "altus"
+  {
+    xthickness = 2
+    ythickness = 2
+  }
+}
+
+# List items and list rows are drawn on the base colour, so their text
+# is in the text colours.
+style "altus-list"
+{
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#808080"
+}
+
+class "GtkWidget" style "altus"
+class "GtkMenu" style "altus-menu"
+widget_class "*MenuItem*" style "altus-menuitem"
+widget_class "*GtkListItem*" style "altus-list"
+widget_class "*GtkCList" style "altus-list"
+widget_class "*GtkCTree" style "altus-list"

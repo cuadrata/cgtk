@@ -1,0 +1,11 @@
+# Priscus: the toolkit's look as GTK+ 1.2 drew it, from the engine
+# built into the library.
+
+style "priscus"
+{
+  engine "priscus"
+  {
+  }
+}
+
+class "GtkWidget" style "priscus"

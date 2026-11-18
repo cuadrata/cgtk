@@ -1,0 +1,265 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cgtk 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 23:56+0000\n"
+"PO-Revision-Date: 2026-11-17 23:00+0000\n"
+"Last-Translator: GNOME PL Team\n"
+"Language-Team: Polish <gnomepl@pandora.info.bielsko.pl>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gtk/gtkcolorsel.c:220
+msgid "Hue:"
+msgstr "Odcień:"
+
+#: gtk/gtkcolorsel.c:221
+msgid "Saturation:"
+msgstr "Nasycenie:"
+
+#: gtk/gtkcolorsel.c:222
+msgid "Value:"
+msgstr "Wartość:"
+
+#: gtk/gtkcolorsel.c:223
+msgid "Red:"
+msgstr "Czerwony:"
+
+#: gtk/gtkcolorsel.c:224
+msgid "Green:"
+msgstr "Zielony:"
+
+#: gtk/gtkcolorsel.c:225
+msgid "Blue:"
+msgstr "Niebieski:"
+
+#: gtk/gtkcolorsel.c:226
+msgid "Opacity:"
+msgstr "Przeźroczystość:"
+
+#: gtk/gtkcolorsel.c:1721 gtk/gtkfilesel.c:1362 gtk/gtkfontsel.c:1002
+#: gtk/gtkgamma.c:415 gtk/gtkmessagedialog.c:120 gtk/gtkmessagedialog.c:133
+msgid "OK"
+msgstr "OK"
+
+#: gtk/gtkcolorsel.c:1727 gtk/gtkfilesel.c:1385 gtk/gtkfilesel.c:1886
+#: gtk/gtkfilesel.c:1987 gtk/gtkfilesel.c:2107 gtk/gtkfontsel.c:1015
+#: gtk/gtkgamma.c:423 gtk/gtkmessagedialog.c:126 gtk/gtkmessagedialog.c:134
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: gtk/gtkcolorsel.c:1732
+msgid "Help"
+msgstr "Pomoc"
+
+#: gtk/gtkeditable.c:1537
+msgid "Undo"
+msgstr "Cofnij"
+
+#: gtk/gtkeditable.c:1538
+msgid "Redo"
+msgstr "Ponów"
+
+#: gtk/gtkeditable.c:1540
+msgid "Cut"
+msgstr "Wytnij"
+
+#: gtk/gtkeditable.c:1541
+msgid "Copy"
+msgstr "Kopiuj"
+
+#: gtk/gtkeditable.c:1542
+msgid "Paste"
+msgstr "Wklej"
+
+#: gtk/gtkeditable.c:1543 gtk/gtkfilesel.c:1978
+msgid "Delete"
+msgstr "Usuń"
+
+#: gtk/gtkeditable.c:1545
+msgid "Select All"
+msgstr "Zaznacz wszystko"
+
+#: gtk/gtkfilesel.c:799
+msgid "All Files"
+msgstr "Wszystkie pliki"
+
+#: gtk/gtkfilesel.c:963
+msgid "Name"
+msgstr "Nazwa"
+
+#: gtk/gtkfilesel.c:963
+msgid "Size"
+msgstr "Rozmiar"
+
+#: gtk/gtkfilesel.c:963
+msgid "Date Modified"
+msgstr "Zmodyfikowano"
+
+#: gtk/gtkfilesel.c:1056
+msgid "Home"
+msgstr "Katalog domowy"
+
+#: gtk/gtkfilesel.c:1057
+msgid "File System"
+msgstr "System plików"
+
+#: gtk/gtkfilesel.c:1229
+msgid "Remove from Places"
+msgstr "Usuń z miejsc"
+
+#: gtk/gtkfilesel.c:1237
+msgid "Look in:"
+msgstr "Szukaj w:"
+
+#: gtk/gtkfilesel.c:1254
+msgid "Add to Places"
+msgstr "Dodaj do miejsc"
+
+#: gtk/gtkfilesel.c:1255
+msgid "Show Hidden Files"
+msgstr "Pokaż ukryte pliki"
+
+#: gtk/gtkfilesel.c:1351
+msgid "File name:"
+msgstr "Nazwa pliku:"
+
+#: gtk/gtkfilesel.c:1375
+msgid "Files of type:"
+msgstr "Pliki typu:"
+
+#: gtk/gtkfilesel.c:1396 gtk/gtkfilesel.c:2532
+#, c-format
+msgid "Directory unreadable: %s"
+msgstr "Nie można odczytać katalogu: %s"
+
+#: gtk/gtkfilesel.c:1437 gtk/gtkfilesel.c:1445
+msgid "Create Dir"
+msgstr "Utwórz katalog"
+
+#: gtk/gtkfilesel.c:1455 gtk/gtkfilesel.c:2060
+msgid "Rename File"
+msgstr "Zmień nazwę"
+
+#: gtk/gtkfilesel.c:1465 gtk/gtkfilesel.c:1955
+msgid "Delete File"
+msgstr "Usuń plik"
+
+#: gtk/gtkfilesel.c:1746
+msgid "Error"
+msgstr "Błąd"
+
+#: gtk/gtkfilesel.c:1770 gtk/gtkinputdialog.c:149 gtk/gtkmessagedialog.c:123
+msgid "Close"
+msgstr "Zamknij"
+
+#: gtk/gtkfilesel.c:1845
+msgid "Create Directory"
+msgstr "Utwórz katalog"
+
+#: gtk/gtkfilesel.c:1860
+msgid "Directory name:"
+msgstr "Nazwa katalogu:"
+
+#: gtk/gtkfilesel.c:1877
+msgid "Create"
+msgstr "Utwórz"
+
+#: gtk/gtkfilesel.c:2098
+msgid "Rename"
+msgstr "Zmień nazwę"
+
+#: gtk/gtkfilesel.c:2508
+msgid "Selection: "
+msgstr "Wybór: "
+
+#: gtk/gtkfontsel.c:332
+msgid "Size (px):"
+msgstr "Rozmiar (px):"
+
+#: gtk/gtkfontsel.c:332 gtk/gtkfontsel.c:659
+msgid "Size (pt):"
+msgstr "Rozmiar (pt):"
+
+#: gtk/gtkfontsel.c:539
+#, c-format
+msgid "%s (bitmap)"
+msgstr "%s (bitmapowa)"
+
+#: gtk/gtkfontsel.c:650
+msgid "Font"
+msgstr "Czcionka"
+
+#: gtk/gtkfontsel.c:657
+msgid "Family:"
+msgstr "Rodzina:"
+
+#: gtk/gtkfontsel.c:658
+msgid "Style:"
+msgstr "Styl:"
+
+#: gtk/gtkfontsel.c:671
+msgid "Preview:"
+msgstr "Podgląd:"
+
+#: gtk/gtkfontsel.c:1009
+msgid "Apply"
+msgstr "Zastosuj"
+
+#: gtk/gtkfontsel.c:1031
+msgid "Font Selection"
+msgstr "Wybór czcionki"
+
+#: gtk/gtkgamma.c:395
+msgid "Gamma"
+msgstr "Gamma"
+
+#: gtk/gtkgamma.c:402
+msgid "Gamma value"
+msgstr "Wartość gamma"
+
+#: gtk/gtkinputdialog.c:126
+msgid "Input"
+msgstr "Wejście"
+
+#: gtk/gtkinputdialog.c:134
+msgid "No input devices"
+msgstr "Brak urządzeń wejściowych"
+
+#: gtk/gtkinputdialog.c:141
+msgid "Save"
+msgstr "Zapisz"
+
+#: gtk/gtkmessagedialog.c:129
+msgid "Yes"
+msgstr "Tak"
+
+#: gtk/gtkmessagedialog.c:130
+msgid "No"
+msgstr "Nie"
+
+#: gtk/gtknotebook.c:2053 gtk/gtknotebook.c:4182
+#, c-format
+msgid "Page %u"
+msgstr "Strona %u"
+
+#: gtk/gtkrc.c:1708
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\" line %d"
+msgstr "Nie można odnaleźć pliku z obrazem na ścieżce: \"%s\" wiersz %d"
+
+#: gtk/gtkrc.c:1711
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\""
+msgstr "Nie można odnaleźć pliku z obrazem na ścieżce: \"%s\""
+
+#: gtk/gtkthemes.c:125
+#, c-format
+msgid "Unable to locate loadable module in module_path: \"%s\","
+msgstr "Nie można odnaleźć modułu ładowalnego na ścieżce: \"%s\","
+
+#: gtk/gtktipsquery.c:179
+msgid "--- No Tip ---"
+msgstr "--- Brak podpowiedzi ---"

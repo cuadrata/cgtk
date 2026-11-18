@@ -1,0 +1,10 @@
+# The GLib and GTK+ 1.2 name for gtk+-1.4, for software written for 1.2.
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: GTK+
+Description: GIMP Tool Kit (1.2 name for gtk+-1.4)
+Version: @VERSION@
+Requires: gtk+-1.4

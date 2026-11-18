@@ -1,0 +1,90 @@
+Installing CGTK 1.4
+===================
+
+No configure script is shipped. Generate one first, which needs
+autoconf, automake, libtool, gettext's autopoint and pkg-config (on
+Debian, the autoconf, automake, libtool, autopoint and pkgconf
+packages; autopoint is not pulled in by gettext):
+
+  autoreconf -vif
+  ./configure
+  make
+  make check          (optional: the programs that check themselves)
+  make install        (as root, for the default prefix of /usr/local)
+
+What it needs
+-------------
+
+  - a C99 compiler, POSIX threads and dlopen
+  - FreeType 2 and fontconfig, which draw and find all text
+  - libpng 1.6 or later, which reads PNG files
+  - for the X11 backend: libX11, and libXext and libXrandr if found
+  - for the Wayland backend: wayland-client, wayland-cursor, xkbcommon,
+    wayland-protocols 1.20 or later and wayland-scanner
+  - for GtkGLArea: EGL, and wayland-egl with the Wayland backend
+  - awk, to make GTK+'s type tables and marshallers
+
+At least one backend has to be found.
+
+
+GLib, GModule, GThread, GDK and GTK+ are built and installed together,
+and with them GtkGLArea, the OpenGL widget, where EGL is found.
+Run "./configure --help" for the options; the ones most likely to be
+wanted are:
+
+  --prefix=DIR                  install under DIR [/usr/local]
+  --enable-x11-backend          build the X11 backend [auto]
+  --enable-wayland-backend      build the Wayland backend [auto]
+  --enable-gl                   build GtkGLArea, which needs EGL, and
+                                wayland-egl with the Wayland backend [auto]
+  --disable-xrandr              do not use libXrandr, by which the X11
+                                backend knows how often a screen is
+                                refreshed [used if found]
+  --with-default-theme=NAME     theme used when no gtkrc picks one [Altus]
+  --disable-compat-pc           do not install the GTK+ 1.2 pkg-config
+                                names (glib, gtk+, ...) as aliases
+
+
+OpenGL
+------
+
+GtkGLArea is a library of its own, libgtkgl-1.4, so that nothing in
+GDK or GTK+ depends on GL. A program that uses it includes
+<gtkgl/gtkglarea.h>, and is built with
+
+  gtk-config --cflags gtkgl      or   pkg-config --cflags gtkgl-1.4
+  gtk-config --libs gtkgl        or   pkg-config --libs gtkgl-1.4
+
+to which it adds the library OpenGL itself is in: on current systems
+that is OpenGL (pkg-config's "opengl"), which is GL and nothing of a
+window system; "gl" where there is only the older one. The
+AM_PATH_GTKGL macro of gtkgl.m4 does both. examples/glarea has
+programs to start from, one of them drawing without pause from the
+main loop as an emulator or a game would; gtkgl/gdkgl.h says where the
+widget differs from the GtkGLArea of GTK+ 1.2 and how a swap is timed.
+
+
+Finding the libraries at run time
+---------------------------------
+
+With glibc, the dynamic linker finds libraries in directories such as
+/usr/local/lib through its cache, /etc/ld.so.cache, so a newly
+installed library cannot be loaded until "ldconfig" has been run.
+"make install" and "make uninstall" run it when installing directly
+(no DESTDIR) as root on a native glibc system. Otherwise, run it by
+hand after installing:
+
+  ldconfig
+
+To skip it, give "make install LDCONFIG=". Package builds that install
+with DESTDIR are left to run it themselves, as packages usually do.
+
+If the prefix is one the dynamic linker does not search (for example
+/opt/cgtk or a directory under $HOME), add its lib directory to
+/etc/ld.so.conf.d/ and run ldconfig, or set LD_LIBRARY_PATH. Building
+programs against such a prefix also needs its pkg-config directory:
+
+  PKG_CONFIG_PATH=/opt/cgtk/lib/pkgconfig ./configure
+
+musl keeps no cache and searches /usr/local/lib by default, so none of
+this is needed there for the default prefix.

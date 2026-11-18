@@ -1,0 +1,270 @@
+# Lithuanian translation for the Gtk+ library
+# Copyright (C) 2000-2001 Free Software Foundation, Inc.
+# Kęstutis Kružikas <DrKestas@takas.lt>, 2000
+# Gediminas Paulauskas <menesis@delfi.lt>, 2000-2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cgtk 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 23:56+0000\n"
+"PO-Revision-Date: 2026-11-17 23:00+0000\n"
+"Last-Translator: Gediminas Paulauskas <menesis@delfi.lt>\n"
+"Language-Team: Lithuanian\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gtk/gtkcolorsel.c:220
+msgid "Hue:"
+msgstr "Atspalvis:"
+
+#: gtk/gtkcolorsel.c:221
+msgid "Saturation:"
+msgstr "Sodrumas:"
+
+#: gtk/gtkcolorsel.c:222
+msgid "Value:"
+msgstr "Vertė:"
+
+#: gtk/gtkcolorsel.c:223
+msgid "Red:"
+msgstr "Raudona:"
+
+#: gtk/gtkcolorsel.c:224
+msgid "Green:"
+msgstr "Žalia:"
+
+#: gtk/gtkcolorsel.c:225
+msgid "Blue:"
+msgstr "Mėlyna:"
+
+#: gtk/gtkcolorsel.c:226
+msgid "Opacity:"
+msgstr "Nepermatomumas:"
+
+#: gtk/gtkcolorsel.c:1721 gtk/gtkfilesel.c:1362 gtk/gtkfontsel.c:1002
+#: gtk/gtkgamma.c:415 gtk/gtkmessagedialog.c:120 gtk/gtkmessagedialog.c:133
+msgid "OK"
+msgstr "Gerai"
+
+#: gtk/gtkcolorsel.c:1727 gtk/gtkfilesel.c:1385 gtk/gtkfilesel.c:1886
+#: gtk/gtkfilesel.c:1987 gtk/gtkfilesel.c:2107 gtk/gtkfontsel.c:1015
+#: gtk/gtkgamma.c:423 gtk/gtkmessagedialog.c:126 gtk/gtkmessagedialog.c:134
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: gtk/gtkcolorsel.c:1732
+msgid "Help"
+msgstr "Pagalba"
+
+#: gtk/gtkeditable.c:1537
+msgid "Undo"
+msgstr "Atšaukti"
+
+#: gtk/gtkeditable.c:1538
+msgid "Redo"
+msgstr "Pakartoti"
+
+#: gtk/gtkeditable.c:1540
+msgid "Cut"
+msgstr "Iškirpti"
+
+#: gtk/gtkeditable.c:1541
+msgid "Copy"
+msgstr "Kopijuoti"
+
+#: gtk/gtkeditable.c:1542
+msgid "Paste"
+msgstr "Įdėti"
+
+#: gtk/gtkeditable.c:1543 gtk/gtkfilesel.c:1978
+msgid "Delete"
+msgstr "Ištrinti"
+
+#: gtk/gtkeditable.c:1545
+msgid "Select All"
+msgstr "Pažymėti viską"
+
+#: gtk/gtkfilesel.c:799
+msgid "All Files"
+msgstr "Visos bylos"
+
+#: gtk/gtkfilesel.c:963
+msgid "Name"
+msgstr "Vardas"
+
+#: gtk/gtkfilesel.c:963
+msgid "Size"
+msgstr "Dydis"
+
+#: gtk/gtkfilesel.c:963
+msgid "Date Modified"
+msgstr "Keitimo data"
+
+#: gtk/gtkfilesel.c:1056
+msgid "Home"
+msgstr "Namai"
+
+#: gtk/gtkfilesel.c:1057
+msgid "File System"
+msgstr "Bylų sistema"
+
+#: gtk/gtkfilesel.c:1229
+msgid "Remove from Places"
+msgstr "Pašalinti iš vietų"
+
+#: gtk/gtkfilesel.c:1237
+msgid "Look in:"
+msgstr "Ieškoti:"
+
+#: gtk/gtkfilesel.c:1254
+msgid "Add to Places"
+msgstr "Pridėti prie vietų"
+
+#: gtk/gtkfilesel.c:1255
+msgid "Show Hidden Files"
+msgstr "Rodyti paslėptas bylas"
+
+#: gtk/gtkfilesel.c:1351
+msgid "File name:"
+msgstr "Bylos vardas:"
+
+#: gtk/gtkfilesel.c:1375
+msgid "Files of type:"
+msgstr "Bylų tipas:"
+
+#: gtk/gtkfilesel.c:1396 gtk/gtkfilesel.c:2532
+#, c-format
+msgid "Directory unreadable: %s"
+msgstr "Katalogas neįskaitomas: %s"
+
+#: gtk/gtkfilesel.c:1437 gtk/gtkfilesel.c:1445
+msgid "Create Dir"
+msgstr "Sukurti katalogą"
+
+#: gtk/gtkfilesel.c:1455 gtk/gtkfilesel.c:2060
+msgid "Rename File"
+msgstr "Pervadinti bylą"
+
+#: gtk/gtkfilesel.c:1465 gtk/gtkfilesel.c:1955
+msgid "Delete File"
+msgstr "Ištrinti bylą"
+
+#: gtk/gtkfilesel.c:1746
+msgid "Error"
+msgstr "Klaida"
+
+#: gtk/gtkfilesel.c:1770 gtk/gtkinputdialog.c:149 gtk/gtkmessagedialog.c:123
+msgid "Close"
+msgstr "Uždaryti"
+
+#: gtk/gtkfilesel.c:1845
+msgid "Create Directory"
+msgstr "Sukurti katalogą"
+
+#: gtk/gtkfilesel.c:1860
+msgid "Directory name:"
+msgstr "Katalogo vardas:"
+
+#: gtk/gtkfilesel.c:1877
+msgid "Create"
+msgstr "Sukurti"
+
+#: gtk/gtkfilesel.c:2098
+msgid "Rename"
+msgstr "Pervadinti"
+
+#: gtk/gtkfilesel.c:2508
+msgid "Selection: "
+msgstr "Pasirinkimas:"
+
+#: gtk/gtkfontsel.c:332
+msgid "Size (px):"
+msgstr "Dydis (px):"
+
+#: gtk/gtkfontsel.c:332 gtk/gtkfontsel.c:659
+msgid "Size (pt):"
+msgstr "Dydis (pt):"
+
+#: gtk/gtkfontsel.c:539
+#, c-format
+msgid "%s (bitmap)"
+msgstr "%s (taškinis)"
+
+#: gtk/gtkfontsel.c:650
+msgid "Font"
+msgstr "Šriftas"
+
+#: gtk/gtkfontsel.c:657
+msgid "Family:"
+msgstr "Šeima:"
+
+#: gtk/gtkfontsel.c:658
+msgid "Style:"
+msgstr "Stilius:"
+
+#: gtk/gtkfontsel.c:671
+msgid "Preview:"
+msgstr "Peržiūra:"
+
+#: gtk/gtkfontsel.c:1009
+msgid "Apply"
+msgstr "Pritaikyti"
+
+#: gtk/gtkfontsel.c:1031
+msgid "Font Selection"
+msgstr "Šrifto pasirinkimas"
+
+#: gtk/gtkgamma.c:395
+msgid "Gamma"
+msgstr "Gama"
+
+#: gtk/gtkgamma.c:402
+msgid "Gamma value"
+msgstr "Gamos reikšmė"
+
+#: gtk/gtkinputdialog.c:126
+msgid "Input"
+msgstr "Įvestis"
+
+#: gtk/gtkinputdialog.c:134
+msgid "No input devices"
+msgstr "Nėra įvesties įrenginių"
+
+#: gtk/gtkinputdialog.c:141
+msgid "Save"
+msgstr "Saugoti"
+
+#: gtk/gtkmessagedialog.c:129
+msgid "Yes"
+msgstr "Taip"
+
+#: gtk/gtkmessagedialog.c:130
+msgid "No"
+msgstr "Ne"
+
+#: gtk/gtknotebook.c:2053 gtk/gtknotebook.c:4182
+#, c-format
+msgid "Page %u"
+msgstr "%u puslapis"
+
+#: gtk/gtkrc.c:1708
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\" line %d"
+msgstr "Negaliu rasti paveikslėlio bylos pixmap_path: „%s“ eilutė %d"
+
+#: gtk/gtkrc.c:1711
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\""
+msgstr "Negaliu rasti paveikslėlio bylos pixmap_path: „%s“"
+
+#: gtk/gtkthemes.c:125
+#, c-format
+msgid "Unable to locate loadable module in module_path: \"%s\","
+msgstr "Negaliu rasti keliamojo modulio module_path: „%s“,"
+
+#: gtk/gtktipsquery.c:179
+msgid "--- No Tip ---"
+msgstr "-Nėra pagalbos-"

@@ -1,0 +1,268 @@
+# gtk+ ko.po
+# Copyright (C) 2000 Free Software Foundation, Inc.
+# Sung-Hyun Nam <namsh@lgic.co.kr>, 2000
+msgid ""
+msgstr ""
+"Project-Id-Version: cgtk 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 23:56+0000\n"
+"PO-Revision-Date: 2026-11-17 23:00+0000\n"
+"Last-Translator: Sung-Hyun Nam <namsh@kldp.org>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gtk/gtkcolorsel.c:220
+msgid "Hue:"
+msgstr "색상:"
+
+#: gtk/gtkcolorsel.c:221
+msgid "Saturation:"
+msgstr "채도:"
+
+#: gtk/gtkcolorsel.c:222
+msgid "Value:"
+msgstr "값:"
+
+#: gtk/gtkcolorsel.c:223
+msgid "Red:"
+msgstr "적색:"
+
+#: gtk/gtkcolorsel.c:224
+msgid "Green:"
+msgstr "녹색:"
+
+#: gtk/gtkcolorsel.c:225
+msgid "Blue:"
+msgstr "청색:"
+
+#: gtk/gtkcolorsel.c:226
+msgid "Opacity:"
+msgstr "불투명:"
+
+#: gtk/gtkcolorsel.c:1721 gtk/gtkfilesel.c:1362 gtk/gtkfontsel.c:1002
+#: gtk/gtkgamma.c:415 gtk/gtkmessagedialog.c:120 gtk/gtkmessagedialog.c:133
+msgid "OK"
+msgstr "확인"
+
+#: gtk/gtkcolorsel.c:1727 gtk/gtkfilesel.c:1385 gtk/gtkfilesel.c:1886
+#: gtk/gtkfilesel.c:1987 gtk/gtkfilesel.c:2107 gtk/gtkfontsel.c:1015
+#: gtk/gtkgamma.c:423 gtk/gtkmessagedialog.c:126 gtk/gtkmessagedialog.c:134
+msgid "Cancel"
+msgstr "취소"
+
+#: gtk/gtkcolorsel.c:1732
+msgid "Help"
+msgstr "도움말"
+
+#: gtk/gtkeditable.c:1537
+msgid "Undo"
+msgstr "실행 취소"
+
+#: gtk/gtkeditable.c:1538
+msgid "Redo"
+msgstr "다시 실행"
+
+#: gtk/gtkeditable.c:1540
+msgid "Cut"
+msgstr "잘라내기"
+
+#: gtk/gtkeditable.c:1541
+msgid "Copy"
+msgstr "복사"
+
+#: gtk/gtkeditable.c:1542
+msgid "Paste"
+msgstr "붙여넣기"
+
+#: gtk/gtkeditable.c:1543 gtk/gtkfilesel.c:1978
+msgid "Delete"
+msgstr "지우기"
+
+#: gtk/gtkeditable.c:1545
+msgid "Select All"
+msgstr "모두 선택"
+
+#: gtk/gtkfilesel.c:799
+msgid "All Files"
+msgstr "모든 파일"
+
+#: gtk/gtkfilesel.c:963
+msgid "Name"
+msgstr "이름"
+
+#: gtk/gtkfilesel.c:963
+msgid "Size"
+msgstr "크기"
+
+#: gtk/gtkfilesel.c:963
+msgid "Date Modified"
+msgstr "바꾼 날짜"
+
+#: gtk/gtkfilesel.c:1056
+msgid "Home"
+msgstr "홈"
+
+#: gtk/gtkfilesel.c:1057
+msgid "File System"
+msgstr "파일 시스템"
+
+#: gtk/gtkfilesel.c:1229
+msgid "Remove from Places"
+msgstr "위치에서 지우기"
+
+#: gtk/gtkfilesel.c:1237
+msgid "Look in:"
+msgstr "찾는 위치:"
+
+#: gtk/gtkfilesel.c:1254
+msgid "Add to Places"
+msgstr "위치에 더하기"
+
+#: gtk/gtkfilesel.c:1255
+msgid "Show Hidden Files"
+msgstr "숨긴 파일 보이기"
+
+#: gtk/gtkfilesel.c:1351
+msgid "File name:"
+msgstr "파일 이름:"
+
+#: gtk/gtkfilesel.c:1375
+msgid "Files of type:"
+msgstr "파일 형식:"
+
+#: gtk/gtkfilesel.c:1396 gtk/gtkfilesel.c:2532
+#, c-format
+msgid "Directory unreadable: %s"
+msgstr "자료방을 읽을 수 없음: %s"
+
+#: gtk/gtkfilesel.c:1437 gtk/gtkfilesel.c:1445
+msgid "Create Dir"
+msgstr "자료방 만들기"
+
+#: gtk/gtkfilesel.c:1455 gtk/gtkfilesel.c:2060
+msgid "Rename File"
+msgstr "파일명 바꿈"
+
+#: gtk/gtkfilesel.c:1465 gtk/gtkfilesel.c:1955
+msgid "Delete File"
+msgstr "파일 지우기"
+
+#: gtk/gtkfilesel.c:1746
+msgid "Error"
+msgstr "오류"
+
+#: gtk/gtkfilesel.c:1770 gtk/gtkinputdialog.c:149 gtk/gtkmessagedialog.c:123
+msgid "Close"
+msgstr "닫기"
+
+#: gtk/gtkfilesel.c:1845
+msgid "Create Directory"
+msgstr "자료방 만들기"
+
+#: gtk/gtkfilesel.c:1860
+msgid "Directory name:"
+msgstr "자료방 이름:"
+
+#: gtk/gtkfilesel.c:1877
+msgid "Create"
+msgstr "만들기"
+
+#: gtk/gtkfilesel.c:2098
+msgid "Rename"
+msgstr "파일명 바꿈"
+
+#: gtk/gtkfilesel.c:2508
+msgid "Selection: "
+msgstr "선택:"
+
+#: gtk/gtkfontsel.c:332
+msgid "Size (px):"
+msgstr "크기 (px):"
+
+#: gtk/gtkfontsel.c:332 gtk/gtkfontsel.c:659
+msgid "Size (pt):"
+msgstr "크기 (pt):"
+
+#: gtk/gtkfontsel.c:539
+#, c-format
+msgid "%s (bitmap)"
+msgstr "%s (비트맵)"
+
+#: gtk/gtkfontsel.c:650
+msgid "Font"
+msgstr "글꼴"
+
+#: gtk/gtkfontsel.c:657
+msgid "Family:"
+msgstr "가족:"
+
+#: gtk/gtkfontsel.c:658
+msgid "Style:"
+msgstr "스타일:"
+
+#: gtk/gtkfontsel.c:671
+msgid "Preview:"
+msgstr "미리보기:"
+
+#: gtk/gtkfontsel.c:1009
+msgid "Apply"
+msgstr "적용"
+
+#: gtk/gtkfontsel.c:1031
+msgid "Font Selection"
+msgstr "글꼴 선택"
+
+#: gtk/gtkgamma.c:395
+msgid "Gamma"
+msgstr "감마"
+
+#: gtk/gtkgamma.c:402
+msgid "Gamma value"
+msgstr "감마 값"
+
+#: gtk/gtkinputdialog.c:126
+msgid "Input"
+msgstr "입력"
+
+#: gtk/gtkinputdialog.c:134
+msgid "No input devices"
+msgstr "입력 장치 없음"
+
+#: gtk/gtkinputdialog.c:141
+msgid "Save"
+msgstr "저장"
+
+#: gtk/gtkmessagedialog.c:129
+msgid "Yes"
+msgstr "예"
+
+#: gtk/gtkmessagedialog.c:130
+msgid "No"
+msgstr "아니오"
+
+#: gtk/gtknotebook.c:2053 gtk/gtknotebook.c:4182
+#, c-format
+msgid "Page %u"
+msgstr "페이지 %u"
+
+#: gtk/gtkrc.c:1708
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\" line %d"
+msgstr "그림 파일을 pixmap_path에서 찾을 수 없음: \"%s\" %d번째 줄"
+
+#: gtk/gtkrc.c:1711
+#, c-format
+msgid "Unable to locate image file in pixmap_path: \"%s\""
+msgstr "그림 파일을 pixmap_path에서 찾을 수 없음: \"%s\""
+
+#: gtk/gtkthemes.c:125
+#, c-format
+msgid "Unable to locate loadable module in module_path: \"%s\","
+msgstr "모듈을 module_path에서 찾을 수 없음: \"%s\","
+
+#: gtk/gtktipsquery.c:179
+msgid "--- No Tip ---"
+msgstr "--- 팁 없음 ---"

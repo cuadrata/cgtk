@@ -1,0 +1,77 @@
+# Altus-Dark: Altus on a dark background, with the same purple accent. The
+# engine is the same; only the colours differ.
+#
+# Every colour the engine draws with is set here: the accent is the
+# SELECTED colours of bg and base. base[ACTIVE] is what GTK+ 1's lists
+# fill the space between their rows with, so it matches base[NORMAL].
+
+style "altus-dark"
+{
+  fg[NORMAL]        = "#e8e6ec"
+  fg[ACTIVE]        = "#e8e6ec"
+  fg[PRELIGHT]      = "#e8e6ec"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#77757b"
+
+  bg[NORMAL]        = "#333138"
+  bg[ACTIVE]        = "#2c2a2f"
+  bg[PRELIGHT]      = "#3a3841"
+  bg[SELECTED]      = "#7966d8"
+  bg[INSENSITIVE]   = "#312f35"
+
+  base[NORMAL]      = "#232127"
+  base[ACTIVE]      = "#232127"
+  base[PRELIGHT]    = "#333138"
+  base[SELECTED]    = "#7966d8"
+  base[INSENSITIVE] = "#26242b"
+
+  text[NORMAL]      = "#e8e6ec"
+  text[ACTIVE]      = "#e8e6ec"
+  text[PRELIGHT]    = "#e8e6ec"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#727076"
+
+  engine "altus"
+  {
+  }
+}
+
+# Menus and their items have a frame two pixels thick, and an item's
+# text is in the selected colour while it is highlighted.
+style "altus-dark-menu"
+{
+  engine "altus"
+  {
+    xthickness = 2
+    ythickness = 2
+  }
+}
+
+style "altus-dark-menuitem"
+{
+  fg[PRELIGHT]      = "#ffffff"
+
+  engine "altus"
+  {
+    xthickness = 2
+    ythickness = 2
+  }
+}
+
+# List items and list rows are drawn on the base colour, so their text
+# is in the text colours.
+style "altus-dark-list"
+{
+  fg[NORMAL]        = "#e8e6ec"
+  fg[ACTIVE]        = "#e8e6ec"
+  fg[PRELIGHT]      = "#e8e6ec"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#727076"
+}
+
+class "GtkWidget" style "altus-dark"
+class "GtkMenu" style "altus-dark-menu"
+widget_class "*MenuItem*" style "altus-dark-menuitem"
+widget_class "*GtkListItem*" style "altus-dark-list"
+widget_class "*GtkCList" style "altus-dark-list"
+widget_class "*GtkCTree" style "altus-dark-list"

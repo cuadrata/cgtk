@@ -1,0 +1,52 @@
+# Metallum: etched edges, flat fills and dotted thumbs, drawn by the
+# engine built into the library. It draws the look of GTK+ 1's Metal
+# theme, with green in place of Metal's lavender and copper for what is
+# under the pointer and the light dots of a thumb or slider.
+#
+# Labels are black, as Metal had them; other text is in the dark green
+# of fg[NORMAL].
+
+style "metallum"
+{
+  fg[NORMAL]        = "#3e5a50"
+  fg[ACTIVE]        = "#3e5a50"
+  fg[PRELIGHT]      = "#3e5a50"
+  fg[SELECTED]      = "#000000"
+  fg[INSENSITIVE]   = "#757575"
+
+  bg[NORMAL]        = "#cccccc"
+  bg[ACTIVE]        = "#cccccc"
+  bg[PRELIGHT]      = "#e6c4a3"
+  bg[SELECTED]      = "#5f9784"
+  bg[INSENSITIVE]   = "#d6d6d6"
+
+  base[NORMAL]      = "#ffffff"
+  base[ACTIVE]      = "#ffffff"
+  base[PRELIGHT]    = "#ffffff"
+  base[SELECTED]    = "#5f9784"
+  base[INSENSITIVE] = "#eaeaea"
+
+  text[NORMAL]      = "#000000"
+  text[ACTIVE]      = "#000000"
+  text[PRELIGHT]    = "#000000"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#757575"
+
+  engine "metallum"
+  {
+  }
+}
+
+style "metallum-black"
+{
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#000000"
+}
+
+class "GtkWidget" style "metallum"
+widget_class "*.GtkMenuItem.*" style "metallum-black"
+widget_class "*.GtkCheckButton.*" style "metallum-black"
+widget_class "*.GtkRadioButton.*" style "metallum-black"
+widget_class "*.GtkButton.*" style "metallum-black"

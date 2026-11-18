@@ -1,0 +1,120 @@
+# Fabrica: soft edges and translucent lines, drawn by the engine built
+# into the library. It was ported from the Industrial engine and theme
+# of gtk-engines 2.20.2, and has Industrial's colours, but for one dark,
+# steely grey for every selection and highlight, where Industrial had two
+# blues, and the grey of a pressed button GTK+ 1's Industrial had.
+#
+# base[ACTIVE] is what GTK+ 1's lists fill the space between their rows
+# with, so it matches base[NORMAL]; Industrial's pale blue there was for
+# GTK+ 2's unfocused selections.
+
+style "fabrica"
+{
+  fg[NORMAL]        = "#000000"
+  fg[ACTIVE]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#7d7d7d"
+
+  bg[NORMAL]        = "#f6f6f6"
+  bg[ACTIVE]        = "#d9d9d9"
+  bg[PRELIGHT]      = "#ffffff"
+  bg[SELECTED]      = "#5a636d"
+  bg[INSENSITIVE]   = "#d9d9d9"
+
+  base[NORMAL]      = "#ffffff"
+  base[ACTIVE]      = "#ffffff"
+  base[PRELIGHT]    = "#ffffff"
+  base[SELECTED]    = "#5a636d"
+  base[INSENSITIVE] = "#f2f2f2"
+
+  text[NORMAL]      = "#000000"
+  text[ACTIVE]      = "#ffffff"
+  text[PRELIGHT]    = "#000000"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#808080"
+
+  engine "fabrica"
+  {
+  }
+}
+
+# Frames two pixels thick
+style "fabrica-wide"
+{
+  engine "fabrica"
+  {
+    xthickness = 2
+    ythickness = 2
+  }
+}
+
+# Scrollbar arrows are a little lighter
+style "fabrica-arrows"
+{
+  fg[NORMAL]        = "#313131"
+
+  engine "fabrica"
+  {
+    xthickness = 2
+    ythickness = 2
+  }
+}
+
+# A highlighted menu item is in the selection colour
+style "fabrica-menuitem"
+{
+  bg[PRELIGHT]      = "#5a636d"
+  bg[SELECTED]      = "#5a636d"
+  fg[PRELIGHT]      = "#ffffff"
+  fg[SELECTED]      = "#ffffff"
+
+  engine "fabrica"
+  {
+    xthickness = 3
+    ythickness = 3
+  }
+}
+
+style "fabrica-menubar"
+{
+  engine "fabrica"
+  {
+    xthickness = 3
+    ythickness = 3
+  }
+}
+
+style "fabrica-tooltips"
+{
+  bg[NORMAL]        = "#e5e5e5"
+  fg[NORMAL]        = "#000000"
+}
+
+# List items and list rows are drawn on the base colour, so their text
+# is in the text colours.
+style "fabrica-list"
+{
+  fg[NORMAL]        = "#000000"
+  fg[PRELIGHT]      = "#000000"
+  fg[ACTIVE]        = "#ffffff"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#d1d1d1"
+}
+
+class "GtkWidget" style "fabrica"
+class "GtkNotebook" style "fabrica-wide"
+class "GtkButton" style "fabrica-wide"
+class "GtkRange" style "fabrica-wide"
+class "GtkMenu" style "fabrica-wide"
+class "GtkFrame" style "fabrica-wide"
+class "GtkStatusbar" style "fabrica-wide"
+class "GtkEntry" style "fabrica-wide"
+class "GtkVScrollbar" style "fabrica-arrows"
+class "GtkHScrollbar" style "fabrica-arrows"
+class "GtkMenuBar" style "fabrica-menubar"
+widget_class "*MenuItem*" style "fabrica-menuitem"
+widget "gtk-tooltips*" style "fabrica-tooltips"
+widget_class "*GtkListItem*" style "fabrica-list"
+widget_class "*GtkCList" style "fabrica-list"
+widget_class "*GtkCTree" style "fabrica-list"

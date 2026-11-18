@@ -1,0 +1,50 @@
+CGTK 1.4
+========
+
+CGTK, the Classic GUI Toolkit, is a fork of GTK+ 1.2.10 and GLib 1.2.10,
+the last releases of the GTK+ 1.2 series, kept building and working on
+current systems. The libraries, headers, functions and types keep
+their GTK+ and GLib names, so that programs written for GTK+ 1.2 build
+against it with few changes or none.
+
+It is not GTK+, and it is not maintained by the GTK+ or GNOME projects.
+Please do not report its bugs to them.
+
+Installation
+============
+
+See the file INSTALL.
+
+Changes
+=======
+
+What has changed since GTK+ 1.2.10 and GLib 1.2.10 is in ChangeLog.
+
+Example programs to build against CGTK are in examples/; see
+examples/README.
+
+History
+=======
+
+GTK+ and GLib were written by Peter Mattis, Spencer Kimball, Josh
+MacDonald and the GTK+ team, and many others who sent patches. Their
+README, NEWS, ChangeLog, AUTHORS and other notes, as released with
+GTK+ 1.2.10 and GLib 1.2.10, are in history/gtk+ and history/glib,
+unchanged.
+
+Licence
+=======
+
+The libraries are under the GNU Lesser General Public License, version
+2.1 or (at your option) any later version; see COPYING. The files that
+came from GTK+ and GLib say version 2 or any later version of the
+Library GPL, of which the Lesser GPL 2.1 is the next version, and the
+files written or ported since say 2.1 or later, so 2.1 or later covers
+them all together.
+
+cgtk-theme, the theme editor, is under the same licence. An example that
+names a licence of its own is under that one.
+
+GDK's SVG renderer, gdk/nanosvg.h and gdk/nanosvgrast.h, came from
+NanoSVG, by Mikko Mononen, and is under the zlib licence given at the
+top of each.

@@ -1,0 +1,149 @@
+# Unicus: flat and modern, after GNOME's Adwaita, drawn by the engine
+# built into the library.
+#
+# base[ACTIVE] is what GTK+ 1's lists fill the space between their rows
+# with, so it matches base[NORMAL].
+
+style "unicus"
+{
+  fg[NORMAL]        = "#2e2e2e"
+  fg[ACTIVE]        = "#2e2e2e"
+  fg[PRELIGHT]      = "#2e2e2e"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#9a9a9a"
+
+  bg[NORMAL]        = "#fafafa"
+  bg[ACTIVE]        = "#fafafa"
+  bg[PRELIGHT]      = "#ececec"
+  bg[SELECTED]      = "#3584e4"
+  bg[INSENSITIVE]   = "#fafafa"
+
+  base[NORMAL]      = "#ffffff"
+  base[ACTIVE]      = "#ffffff"
+  base[PRELIGHT]    = "#ffffff"
+  base[SELECTED]    = "#3584e4"
+  base[INSENSITIVE] = "#fafafa"
+
+  text[NORMAL]      = "#2e2e2e"
+  text[ACTIVE]      = "#2e2e2e"
+  text[PRELIGHT]    = "#2e2e2e"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#9a9a9a"
+
+  engine "unicus"
+  {
+  }
+}
+
+# Buttons: grey, darker under the pointer and pressed, with room round
+# their labels
+style "unicus-button"
+{
+  bg[NORMAL]        = "#e8e8e8"
+  bg[PRELIGHT]      = "#dedede"
+  bg[ACTIVE]        = "#cfcfcf"
+  bg[INSENSITIVE]   = "#f0f0f0"
+
+  engine "unicus"
+  {
+    xthickness = 6
+    ythickness = 4
+  }
+}
+
+# Entries: a grey field, and a selection tinted with the accent
+style "unicus-entry"
+{
+  base[NORMAL]      = "#ebebeb"
+  base[INSENSITIVE] = "#ebebeb"
+  bg[SELECTED]      = "#c4dbf7"
+  fg[SELECTED]      = "#2e2e2e"
+
+  engine "unicus"
+  {
+    xthickness = 6
+    ythickness = 4
+  }
+}
+
+# Lists: a selected row is tinted with the accent
+style "unicus-list"
+{
+  bg[SELECTED]      = "#dde8f7"
+  fg[SELECTED]      = "#2e2e2e"
+  fg[NORMAL]        = "#2e2e2e"
+}
+
+# Menus: a lighter surface, a highlighted item a grey patch
+style "unicus-menu"
+{
+  bg[NORMAL]        = "#ffffff"
+
+  engine "unicus"
+  {
+    xthickness = 1
+    ythickness = 4
+  }
+}
+
+style "unicus-menuitem"
+{
+  bg[PRELIGHT]      = "#ececec"
+  fg[PRELIGHT]      = "#2e2e2e"
+
+  engine "unicus"
+  {
+    xthickness = 6
+    ythickness = 4
+  }
+}
+
+style "unicus-menubar"
+{
+  bg[NORMAL]        = "#ebebeb"
+
+  engine "unicus"
+  {
+    xthickness = 2
+    ythickness = 2
+  }
+}
+
+# Progress bars: no frame round the bar
+style "unicus-progress"
+{
+  engine "unicus"
+  {
+    xthickness = 0
+    ythickness = 0
+  }
+}
+
+# Scales: a larger, round slider
+style "unicus-scale"
+{
+  engine "unicus"
+  {
+    slider_width = 20
+  }
+}
+
+style "unicus-tooltips"
+{
+  bg[NORMAL]        = "#2e2e2e"
+  fg[NORMAL]        = "#ffffff"
+}
+
+class "GtkWidget" style "unicus"
+class "GtkButton" style "unicus-button"
+class "GtkOptionMenu" style "unicus-button"
+class "GtkEntry" style "unicus-entry"
+class "GtkMenu" style "unicus-menu"
+class "GtkMenuBar" style "unicus-menubar"
+class "GtkProgressBar" style "unicus-progress"
+class "GtkScale" style "unicus-scale"
+widget_class "*MenuItem*" style "unicus-menuitem"
+widget_class "*GtkCList" style "unicus-list"
+widget_class "*GtkCTree" style "unicus-list"
+widget_class "*GtkListItem*" style "unicus-list"
+widget "gtk-tooltips*" style "unicus-tooltips"

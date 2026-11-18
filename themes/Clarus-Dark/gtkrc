@@ -1,0 +1,140 @@
+# Clarus-Dark: Clarus on a dark grey, its selections a deeper blue,
+# and insensitive text a mid grey, where GTK+ 2's darker () would hide it.
+
+style "clarus-dark"
+{
+  fg[NORMAL]        = "#eeeeec"
+  fg[ACTIVE]        = "#eeeeec"
+  fg[PRELIGHT]      = "#eeeeec"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#8a8884"
+
+  bg[NORMAL]        = "#3c3b39"
+  bg[ACTIVE]        = "#363533"
+  bg[PRELIGHT]      = "#3d3c3a"
+  bg[SELECTED]      = "#5b84b5"
+  bg[INSENSITIVE]   = "#3c3b39"
+
+  base[NORMAL]      = "#262625"
+  base[ACTIVE]      = "#262625"
+  base[PRELIGHT]    = "#393836"
+  base[SELECTED]    = "#5b84b5"
+  base[INSENSITIVE] = "#3c3b39"
+
+  text[NORMAL]      = "#eeeeec"
+  text[ACTIVE]      = "#eeeeec"
+  text[PRELIGHT]    = "#eeeeec"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#8a8884"
+
+  engine "clarus"
+  {
+    style              = GUMMY
+    radius             = 3.0
+    reliefstyle        = 1
+    menubarstyle       = 0
+    toolbarstyle       = 0
+    colorize_scrollbar = TRUE
+    xthickness         = 1
+    ythickness         = 1
+  }
+}
+
+style "clarus-dark-wide"
+{
+  engine "clarus" { xthickness = 2  ythickness = 2 }
+}
+
+style "clarus-dark-entry"
+{
+  bg[SELECTED]      = "#3b4c5f"
+  fg[SELECTED]      = "#eeeeec"
+
+  engine "clarus"
+  {
+    focus_color     = "#43566e"
+    xthickness      = 3
+    ythickness      = 3
+  }
+}
+
+style "clarus-dark-button"
+{
+  bg[NORMAL]        = "#3e3d3b"
+  bg[PRELIGHT]      = "#403f3c"
+  bg[ACTIVE]        = "#333231"
+
+  engine "clarus" { xthickness = 3  ythickness = 3 }
+}
+
+style "clarus-dark-notebook"
+{
+  bg[NORMAL]        = "#3d3c3a"
+
+  engine "clarus" { xthickness = 3  ythickness = 3 }
+}
+
+style "clarus-dark-notebook-page"
+{
+  bg[NORMAL]        = "#3d3c3a"
+}
+
+style "clarus-dark-menu"
+{
+  bg[NORMAL]        = "#41403d"
+
+  engine "clarus" { xthickness = 1  ythickness = 1  radius = 0.0 }
+}
+
+style "clarus-dark-menuitem"
+{
+  fg[PRELIGHT]      = "#ffffff"
+
+  engine "clarus" { xthickness = 2  ythickness = 3 }
+}
+
+style "clarus-dark-progressbar"
+{
+  fg[PRELIGHT]      = "#ffffff"
+}
+
+style "clarus-dark-header"
+{
+  engine "clarus" { xthickness = 2  ythickness = 1 }
+}
+
+style "clarus-dark-tooltips"
+{
+  bg[NORMAL]        = "#4b4a3a"
+  fg[NORMAL]        = "#eeeeec"
+
+  engine "clarus" { xthickness = 4  ythickness = 4 }
+}
+
+# GTK+ 1's lists draw their text in fg
+style "clarus-dark-list"
+{
+  fg[NORMAL]        = "#eeeeec"
+  fg[ACTIVE]        = "#ffffff"
+  fg[PRELIGHT]      = "#eeeeec"
+}
+
+class "GtkWidget" style "clarus-dark"
+class "GtkSeparator" style "clarus-dark-wide"
+class "GtkFrame" style "clarus-dark-wide"
+class "GtkCalendar" style "clarus-dark-wide"
+class "GtkRange" style "clarus-dark-wide"
+class "GtkEntry" style "clarus-dark-entry"
+class "GtkText" style "clarus-dark-entry"
+class "GtkButton" style "clarus-dark-button"
+class "GtkNotebook" style "clarus-dark-notebook"
+class "GtkProgress" style "clarus-dark-progressbar"
+class "GtkCList" style "clarus-dark-list"
+widget_class "*GtkNotebook.GtkEventBox*" style "clarus-dark-notebook-page"
+widget_class "*GtkNotebook.GtkViewport*" style "clarus-dark-notebook-page"
+widget_class "*GtkNotebook.GtkScrolledWindow*" style "clarus-dark-notebook-page"
+class "GtkMenu" style "clarus-dark-menu"
+widget_class "*GtkMenu.*" style "clarus-dark-menu"
+widget_class "*GtkMenuItem*" style "clarus-dark-menuitem"
+widget_class "*.GtkCList.GtkButton" style "clarus-dark-header"
+widget "gtk-tooltips" style "clarus-dark-tooltips"

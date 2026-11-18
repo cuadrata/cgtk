@@ -1,0 +1,53 @@
+# FenestraMM-Dark: FenestraMM's bevels and Office 2000's flat toolbars in dark
+# greys, with the blue of Windows 2000's desktop for selections.
+
+style "fenestramm-dark"
+{
+  fg[NORMAL]        = "#e4e2dc"
+  fg[ACTIVE]        = "#e4e2dc"
+  fg[PRELIGHT]      = "#e4e2dc"
+  fg[SELECTED]      = "#ffffff"
+  fg[INSENSITIVE]   = "#85827c"
+
+  bg[NORMAL]        = "#45433f"
+  bg[ACTIVE]        = "#45433f"
+  bg[PRELIGHT]      = "#45433f"
+  bg[SELECTED]      = "#3a6ea5"
+  bg[INSENSITIVE]   = "#45433f"
+
+  base[NORMAL]      = "#252422"
+  base[ACTIVE]      = "#252422"
+  base[PRELIGHT]    = "#252422"
+  base[SELECTED]    = "#3a6ea5"
+  base[INSENSITIVE] = "#45433f"
+
+  text[NORMAL]      = "#e4e2dc"
+  text[ACTIVE]      = "#e4e2dc"
+  text[PRELIGHT]    = "#e4e2dc"
+  text[SELECTED]    = "#ffffff"
+  text[INSENSITIVE] = "#85827c"
+
+  engine "fenestramm"
+  {
+    highlight   = "#76736c"
+    light       = "#45433f"
+    shadow      = "#2a2926"
+    dark_shadow = "#141412"
+  }
+}
+
+style "fenestramm-dark-menu"
+{
+  bg[PRELIGHT]      = "#3a6ea5"
+  fg[PRELIGHT]      = "#ffffff"
+}
+
+style "fenestramm-dark-tooltips"
+{
+  bg[NORMAL]        = "#3d3b2c"
+  fg[NORMAL]        = "#e4e2dc"
+}
+
+class "GtkWidget" style "fenestramm-dark"
+widget_class "*GtkMenu.*" style "fenestramm-dark-menu"
+widget "gtk-tooltips" style "fenestramm-dark-tooltips"
