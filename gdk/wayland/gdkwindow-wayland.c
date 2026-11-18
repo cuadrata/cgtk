@@ -59,8 +59,11 @@ buffer_release (void *data, struct wl_buffer *wl_buffer)
   GdkWaylandBuffer *buffer = data;
 
   /* A commit may have waited for a free buffer: it is seen to when
-   * everything that came with this has been dispatched. */
+   * everything that came with this has been dispatched. So may a
+   * title bar, whose window has nothing else to commit. */
   buffer->busy = FALSE;
+  if (buffer->window && !buffer->window->destroyed && _gdk_wayland_decor_waits_for (buffer->window, buffer))
+    buffer->window->impl->commit_pending = TRUE;
 }
 
 static const struct wl_buffer_listener buffer_listener = {

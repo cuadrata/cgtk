@@ -322,6 +322,8 @@ draw_bar (GdkWaylandDecor *decor)
   draw_button (decor, pixmap, gc, PART_CLOSE, active);
   gdk_gc_unref (gc);
 
+  /* With both held by the compositor the bar stays as it was, and is
+   * drawn when one is let go: see buffer_release(). */
   for (i = 0; i < 2; i++)
     if (!decor->bar_buffers[i].busy)
       {
@@ -540,6 +542,17 @@ _gdk_wayland_decor_frame_done (GdkWindowPrivate *private)
       decor->minimized = decor->hidden_for_minimize = FALSE;
       _gdk_wayland_decor_changed (private);
     }
+}
+
+/* Whether the title bar, shown and not drawn as it now is, waits for
+ * the buffer that was let go to be drawn in. */
+gboolean
+_gdk_wayland_decor_waits_for (GdkWindowPrivate *private, GdkWaylandBuffer *buffer)
+{
+  GdkWaylandDecor *decor = private->impl ? private->impl->decor : NULL;
+
+  return decor && decor->dirty && decor_shown (private) &&
+    (buffer == &decor->bar_buffers[0] || buffer == &decor->bar_buffers[1]);
 }
 
 /* Whether the window is to wait for its frame, however long: the one

@@ -260,6 +260,7 @@ void     _gdk_wayland_decor_before_commit  (GdkWindowPrivate *private);
 void     _gdk_wayland_decor_listen         (GdkWindowPrivate *private);
 void     _gdk_wayland_decor_frame_done     (GdkWindowPrivate *private);
 gboolean _gdk_wayland_decor_needs_frame    (GdkWindowPrivate *private);
+gboolean _gdk_wayland_decor_waits_for    (GdkWindowPrivate *private, GdkWaylandBuffer *buffer);
 void     _gdk_wayland_decor_free           (GdkWindowPrivate *private);
 gboolean _gdk_wayland_decor_pointer_enter  (struct wl_surface *surface, gint x, gint y);
 gboolean _gdk_wayland_decor_pointer_leave  (struct wl_surface *surface);
