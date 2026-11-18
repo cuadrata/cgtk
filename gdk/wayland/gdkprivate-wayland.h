@@ -98,6 +98,7 @@ struct _GdkWindowImpl
   struct zxdg_toplevel_decoration_v1 *decoration;
   struct wl_subsurface *subsurface;
   struct wl_callback *frame;      /* the frame callback awaited, if any */
+  gint64 frame_asked;            /* when it was asked for, in ms on a clock not set */
   struct wl_region *shape;        /* the input region, from a shape mask */
   GdkBitmap *shape_mask;
   GList *outputs;                 /* the wl_outputs the surface is on */
@@ -258,6 +259,7 @@ void     _gdk_wayland_decor_changed        (GdkWindowPrivate *private);
 void     _gdk_wayland_decor_before_commit  (GdkWindowPrivate *private);
 void     _gdk_wayland_decor_listen         (GdkWindowPrivate *private);
 void     _gdk_wayland_decor_frame_done     (GdkWindowPrivate *private);
+gboolean _gdk_wayland_decor_needs_frame    (GdkWindowPrivate *private);
 void     _gdk_wayland_decor_free           (GdkWindowPrivate *private);
 gboolean _gdk_wayland_decor_pointer_enter  (struct wl_surface *surface, gint x, gint y);
 gboolean _gdk_wayland_decor_pointer_leave  (struct wl_surface *surface);

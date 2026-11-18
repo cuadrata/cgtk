@@ -542,6 +542,16 @@ _gdk_wayland_decor_frame_done (GdkWindowPrivate *private)
     }
 }
 
+/* Whether the window is to wait for its frame, however long: the one
+ * that tells the title bar to come back when it is no longer minimized. */
+gboolean
+_gdk_wayland_decor_needs_frame (GdkWindowPrivate *private)
+{
+  GdkWaylandDecor *decor = private->impl ? private->impl->decor : NULL;
+
+  return decor && decor->minimized && decor->hidden_for_minimize;
+}
+
 /* The compositor's word on decorations: its own, or ours. */
 static void
 decoration_configure (void *data, struct zxdg_toplevel_decoration_v1 *decoration, uint32_t mode)

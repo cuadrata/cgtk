@@ -29,6 +29,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <sys/mman.h>
+#include <time.h>
 #include "gdk.h"
 #include "gdkprivate-wayland.h"
 #include "gdkbackend-wayland.h"
@@ -1377,6 +1378,60 @@ static const struct wl_callback_listener frame_listener = {
   frame_done
 };
 
+/*
+ * A frame is waited for, but not for ever. A compositor need not send
+ * one while it shows nothing of the window, and GNOME's sends none
+ * until it next draws the screen: a window all covered by its own
+ * subsurfaces -- a GtkGLArea, with no menubar or scrollbar beside it
+ * -- would wait for that, and its title bar, and any change to its
+ * size, with it. After FRAME_WAIT the window commits without the
+ * frame.
+ */
+#define FRAME_WAIT 100  /* ms */
+
+static guint frame_wait_tag = 0;
+
+static gint64
+now_ms (void)
+{
+  struct timespec ts;
+
+  clock_gettime (CLOCK_MONOTONIC, &ts);
+  return (gint64) ts.tv_sec * 1000 + ts.tv_nsec / 1000000;
+}
+
+static gboolean
+frame_wait_over (gpointer data)
+{
+  frame_wait_tag = 0;
+  _gdk_wayland_flush ();
+  return FALSE;
+}
+
+/* Whether the window waits for its frame still; if so, it is asked
+ * after again when the wait is over. */
+static gboolean
+frame_awaited (GdkWindowPrivate *private)
+{
+  GdkWindowImpl *impl = private->impl;
+  gint64 waited;
+
+  if (!impl->frame)
+    return FALSE;
+  if (_gdk_wayland_decor_needs_frame (private))
+    return TRUE;
+  waited = now_ms () - impl->frame_asked;
+  if (waited >= FRAME_WAIT || waited < 0)
+    {
+      wl_callback_destroy (impl->frame);
+      impl->frame = NULL;
+      return FALSE;
+    }
+  if (!frame_wait_tag)
+    frame_wait_tag = g_timeout_add (FRAME_WAIT - waited, frame_wait_over, NULL);
+  return TRUE;
+}
+
 /* A rectangle of the framebuffer, with the shape mask cut into its
  * alpha if it has one; NULL for all of it. */
 static void
@@ -1446,8 +1501,8 @@ window_can_commit (GdkWindowPrivate *private)
   if (private->window_type == GDK_WINDOW_TEMP && !impl->xdg_popup &&
       !impl->xdg_toplevel && !impl->drag_icon)
     return FALSE;
-  if (impl->frame)
-    return FALSE;    /* waits for the frame */
+  if (frame_awaited (private))
+    return FALSE;
   if (impl->buffers[0].busy && impl->buffers[1].busy)
     return FALSE;    /* both held; the release will bring it back */
   return TRUE;
@@ -1573,6 +1628,7 @@ window_commit (GdkWindowPrivate *private)
     _gdk_wayland_decor_before_commit (private);
 
   impl->frame = wl_surface_frame (impl->surface);
+  impl->frame_asked = now_ms ();
   wl_callback_add_listener (impl->frame, &frame_listener, private);
   wl_surface_commit (impl->surface);
   impl->commit_pending = FALSE;
