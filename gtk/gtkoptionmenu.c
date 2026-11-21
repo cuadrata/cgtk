@@ -255,6 +255,17 @@ gtk_option_menu_set_history (GtkOptionMenu *option_menu,
     }
 }
 
+gint
+gtk_option_menu_get_history (GtkOptionMenu *option_menu)
+{
+  g_return_val_if_fail (option_menu != NULL, -1);
+  g_return_val_if_fail (GTK_IS_OPTION_MENU (option_menu), -1);
+
+  if (!option_menu->menu || !option_menu->menu_item)
+    return -1;
+  return g_list_index (GTK_MENU_SHELL (option_menu->menu)->children, option_menu->menu_item);
+}
+
 static void
 gtk_option_menu_destroy (GtkObject *object)
 {

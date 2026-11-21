@@ -71,6 +71,9 @@ void       gtk_option_menu_set_menu    (GtkOptionMenu *option_menu,
 void       gtk_option_menu_remove_menu (GtkOptionMenu *option_menu);
 void       gtk_option_menu_set_history (GtkOptionMenu *option_menu,
                                         guint          index);
+/* The place in its menu of the item chosen, counting from 0, or -1 with
+ * no menu. Not in GTK+ 1.2: as in GTK+ 2. */
+gint       gtk_option_menu_get_history (GtkOptionMenu *option_menu);
 
 
 #ifdef __cplusplus
