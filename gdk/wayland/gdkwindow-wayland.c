@@ -2131,8 +2131,7 @@ _gdk_wayland_window_free (GdkWindowPrivate *private)
     return;
   if (impl->cursor && --impl->cursor->ref_count == 0)
     {
-      if (impl->cursor->own_buffer && impl->cursor->buffer)
-        wl_buffer_destroy (impl->cursor->buffer);
+      _gdk_wayland_shm_buffer_free (&impl->cursor->own);
       g_free (impl->cursor);
     }
   if (impl->shape)
@@ -2666,8 +2665,7 @@ cursor_impl_unref (GdkCursorImpl *impl)
 {
   if (--impl->ref_count > 0)
     return;
-  if (impl->own_buffer && impl->buffer)
-    wl_buffer_destroy (impl->buffer);
+  _gdk_wayland_shm_buffer_free (&impl->own);
   g_free (impl);
 }
 
@@ -2747,15 +2745,22 @@ _gdk_wayland_cursor_new_from_pixmap (GdkPixmap *source, GdkPixmap *mask,
   GdkCursorImpl *impl;
   GdkFramebuffer *sfb = _gdk_drawable_fb (source);
   GdkFramebuffer *mfb = mask ? _gdk_drawable_fb (mask) : NULL;
-  GdkWaylandBuffer buffer;
+  GdkWaylandBuffer *buffer;
   gint px, py;
 
   g_return_val_if_fail (source != NULL, NULL);
 
   impl = g_new0 (GdkCursorImpl, 1);
   impl->ref_count = 1;
-  /* At the pixmap's own scale: the buffer is its pixels. */
-  if (sfb && _gdk_wayland_shm_buffer_new (&buffer, sfb->width, sfb->height, TRUE))
+  /*
+   * At the pixmap's own scale: the buffer is its pixels. The buffer is
+   * the cursor's, as the compositor says when it has done with one and
+   * what it says goes to the buffer: on the stack it was gone by then,
+   * and the first cursor to be changed for another wrote over whatever
+   * was there.
+   */
+  buffer = &impl->own;
+  if (sfb && _gdk_wayland_shm_buffer_new (buffer, sfb->width, sfb->height, TRUE))
     {
       for (py = 0; py < sfb->height; py++)
         for (px = 0; px < sfb->width; px++)
@@ -2767,13 +2772,11 @@ _gdk_wayland_cursor_new_from_pixmap (GdkPixmap *source, GdkPixmap *mask,
             gboolean set = sfb->pixels[(gsize) py * sfb->stride + px] & 1;
             GdkColor *c = set ? fg : bg;
 
-            buffer.data[(gsize) py * buffer.width + px] = on
+            buffer->data[(gsize) py * buffer->width + px] = on
               ? 0xff000000 | ((c->red >> 8) << 16) | ((c->green >> 8) << 8) | (c->blue >> 8)
               : 0;
           }
-      impl->buffer = buffer.buffer;
-      impl->own_buffer = TRUE;
-      munmap (buffer.data, buffer.size);
+      impl->buffer = buffer->buffer;
       impl->width = sfb->width;
       impl->height = sfb->height;
       impl->hotspot_x = x * sfb->scale;

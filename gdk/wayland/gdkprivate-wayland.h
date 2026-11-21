@@ -163,7 +163,9 @@ struct _GdkCursorImpl
   gint hotspot_x, hotspot_y;      /* in the buffer's pixels */
   gint scale;                     /* the buffer's pixels per screen pixel */
   gboolean zoomed;                /* a pixmap cursor: grows with the zoom */
-  gboolean own_buffer;            /* made from a pixmap; freed with it */
+  GdkWaylandBuffer own;           /* the buffer of one made from a pixmap:
+                                   * it hears of its release, so it lasts
+                                   * as long as the cursor does */
   guint ref_count;
 };
 
