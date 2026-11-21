@@ -2746,30 +2746,34 @@ _gdk_wayland_cursor_new_from_pixmap (GdkPixmap *source, GdkPixmap *mask,
   GdkFramebuffer *sfb = _gdk_drawable_fb (source);
   GdkFramebuffer *mfb = mask ? _gdk_drawable_fb (mask) : NULL;
   GdkWaylandBuffer *buffer;
-  gint px, py;
+  gint px, py, each;
 
   g_return_val_if_fail (source != NULL, NULL);
 
   impl = g_new0 (GdkCursorImpl, 1);
   impl->ref_count = 1;
   /*
-   * At the pixmap's own scale: the buffer is its pixels. The buffer is
-   * the cursor's, as the compositor says when it has done with one and
-   * what it says goes to the buffer: on the stack it was gone by then,
-   * and the first cursor to be changed for another wrote over whatever
-   * was there.
+   * The buffer is the pixmap's pixels, each as many times over as
+   * brings the pixmap to the screen's scale: a compositor asked to
+   * enlarge a small buffer smooths it, and the cursor is blurred. The
+   * buffer is the cursor's, as the compositor says when it has done
+   * with one and what it says goes to the buffer: on the stack it was
+   * gone by then, and the first cursor to be changed for another wrote
+   * over whatever was there.
    */
   buffer = &impl->own;
-  if (sfb && _gdk_wayland_shm_buffer_new (buffer, sfb->width, sfb->height, TRUE))
+  each = sfb ? MAX (gdk_screen_scale_factor () / sfb->scale, 1) : 1;
+  if (sfb && _gdk_wayland_shm_buffer_new (buffer, sfb->width * each, sfb->height * each, TRUE))
     {
-      for (py = 0; py < sfb->height; py++)
-        for (px = 0; px < sfb->width; px++)
+      for (py = 0; py < buffer->height; py++)
+        for (px = 0; px < buffer->width; px++)
           {
-            gint mx = mfb ? px * mfb->scale / sfb->scale : 0;
-            gint my = mfb ? py * mfb->scale / sfb->scale : 0;
+            gint sx = px / each, sy = py / each;
+            gint mx = mfb ? sx * mfb->scale / sfb->scale : 0;
+            gint my = mfb ? sy * mfb->scale / sfb->scale : 0;
             gboolean on = !mfb || (mx < mfb->width && my < mfb->height &&
                                    (mfb->pixels[(gsize) my * mfb->stride + mx] & 1));
-            gboolean set = sfb->pixels[(gsize) py * sfb->stride + px] & 1;
+            gboolean set = sfb->pixels[(gsize) sy * sfb->stride + sx] & 1;
             GdkColor *c = set ? fg : bg;
 
             buffer->data[(gsize) py * buffer->width + px] = on
@@ -2777,11 +2781,11 @@ _gdk_wayland_cursor_new_from_pixmap (GdkPixmap *source, GdkPixmap *mask,
               : 0;
           }
       impl->buffer = buffer->buffer;
-      impl->width = sfb->width;
-      impl->height = sfb->height;
-      impl->hotspot_x = x * sfb->scale;
-      impl->hotspot_y = y * sfb->scale;
-      impl->scale = sfb->scale;
+      impl->width = buffer->width;
+      impl->height = buffer->height;
+      impl->scale = sfb->scale * each;
+      impl->hotspot_x = x * impl->scale;
+      impl->hotspot_y = y * impl->scale;
       impl->zoomed = TRUE;      /* the program's own: as big as its windows */
     }
 
