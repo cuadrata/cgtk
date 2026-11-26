@@ -683,25 +683,42 @@ gdk_pixmap_create_from_png (GdkWindow   *window,
   return _gdk_pixmap_of_rgba (window, mask, transparent_color, pixels, width, height);
 }
 
-/* And of an SVG file, which has no size of its own in pixels, drawn
- * as large as fits in width by height, in the middle of it.
+/* And of a PNG file that is in memory, as a program has one that keeps
+ * its pictures in itself: what gdk_pixmap_create_from_xpm_d() is to
+ * gdk_pixmap_create_from_xpm().
  */
 GdkPixmap*
-gdk_pixmap_create_from_svg (GdkWindow   *window,
-                            GdkBitmap  **mask,
-                            GdkColor    *transparent_color,
-                            const gchar *filename,
-                            gint         width,
-                            gint         height)
+gdk_pixmap_create_from_png_d (GdkWindow    *window,
+                              GdkBitmap   **mask,
+                              GdkColor     *transparent_color,
+                              const guchar *data,
+                              gsize         length)
 {
-  GdkSvg *svg;
+  gint width, height;
+  guchar *pixels;
+
+  g_return_val_if_fail (data != NULL, NULL);
+
+  pixels = gdk_png_load_from_data (data, length, &width, &height, NULL);
+
+  return _gdk_pixmap_of_rgba (window, mask, transparent_color, pixels, width, height);
+}
+
+/* A pixmap of an SVG picture, which has no size of its own in pixels,
+ * drawn as large as fits in width by height, in the middle of it. The
+ * picture is freed.
+ */
+static GdkPixmap*
+gdk_pixmap_of_svg (GdkWindow  *window,
+                   GdkBitmap **mask,
+                   GdkColor   *transparent_color,
+                   GdkSvg     *svg,
+                   gint        width,
+                   gint        height)
+{
   guchar *pixels;
   gdouble w, h, scale;
 
-  g_return_val_if_fail (filename != NULL, NULL);
-  g_return_val_if_fail (width > 0 && height > 0, NULL);
-
-  svg = gdk_svg_load (filename, NULL);
   if (!svg)
     return NULL;
   gdk_svg_get_size (svg, &w, &h);
@@ -711,6 +728,41 @@ gdk_pixmap_create_from_svg (GdkWindow   *window,
   gdk_svg_free (svg);
 
   return _gdk_pixmap_of_rgba (window, mask, transparent_color, pixels, width, height);
+}
+
+/* Of an SVG file. */
+GdkPixmap*
+gdk_pixmap_create_from_svg (GdkWindow   *window,
+                            GdkBitmap  **mask,
+                            GdkColor    *transparent_color,
+                            const gchar *filename,
+                            gint         width,
+                            gint         height)
+{
+  g_return_val_if_fail (filename != NULL, NULL);
+  g_return_val_if_fail (width > 0 && height > 0, NULL);
+
+  return gdk_pixmap_of_svg (window, mask, transparent_color,
+                            gdk_svg_load (filename, NULL), width, height);
+}
+
+/* And of one that is in memory: its text, of the length given or up to
+ * its end if that is -1, as gdk_svg_load_from_data() takes it.
+ */
+GdkPixmap*
+gdk_pixmap_create_from_svg_d (GdkWindow   *window,
+                              GdkBitmap  **mask,
+                              GdkColor    *transparent_color,
+                              const gchar *data,
+                              gssize       length,
+                              gint         width,
+                              gint         height)
+{
+  g_return_val_if_fail (data != NULL, NULL);
+  g_return_val_if_fail (width > 0 && height > 0, NULL);
+
+  return gdk_pixmap_of_svg (window, mask, transparent_color,
+                            gdk_svg_load_from_data (data, length, NULL), width, height);
 }
 
 

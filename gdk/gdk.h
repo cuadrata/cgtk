@@ -607,6 +607,24 @@ GdkPixmap* gdk_pixmap_create_from_svg   (GdkWindow  *window,
                                          const gchar *filename,
                                          gint        width,
                                          gint        height);
+/* The same two of a picture that is in memory and not in a file, as a
+ * program has one that keeps its pictures in itself: the bytes of a PNG
+ * file, or the text of an SVG file, of the length given or, for SVG, up
+ * to its end if that is -1. They are to these what
+ * gdk_pixmap_create_from_xpm_d() is to gdk_pixmap_create_from_xpm().
+ */
+GdkPixmap* gdk_pixmap_create_from_png_d (GdkWindow    *window,
+                                         GdkBitmap   **mask,
+                                         GdkColor     *transparent_color,
+                                         const guchar *data,
+                                         gsize         length);
+GdkPixmap* gdk_pixmap_create_from_svg_d (GdkWindow   *window,
+                                         GdkBitmap  **mask,
+                                         GdkColor    *transparent_color,
+                                         const gchar *data,
+                                         gssize       length,
+                                         gint         width,
+                                         gint         height);
 GdkPixmap* gdk_pixmap_colormap_create_from_xpm (
                                          GdkWindow   *window,
                                          GdkColormap *colormap,
